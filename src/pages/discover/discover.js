@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {withRouter} from "react-router-dom"
+import {Link, withRouter} from "react-router-dom"
 
 import Slide from 'base/slide/silde'
 import Loading from 'base/loading/loading'
@@ -64,31 +64,31 @@ class Discover extends Component {
                   <div className="menu-icon playlist"/>
                   <p>歌单</p>
                 </div>
-                <div className="menu-item">
+                <Link to="/toplist" className="menu-item">
                   <div className="menu-icon rank"/>
                   <p>排行榜</p>
-                </div>
-              </div>
-              <div className="lcrlist">
-                <h3 className="lcrlist-hd"><span>推荐歌单</span></h3>
-                <ul className="lcrlist-bd">
-                  {
-                    personalized.length > 0 && personalized.map(item => {
-                      return (
-                        <li className="lcrlist-item" key={item.id}>
-                          <div className="item-img">
-                            <img width="100%" height="100%" src={`${item.picUrl}?param=200y200`} alt=""/>
-                          </div>
-                          <p className="item-title">{item.name.replace(/\s/g, ' ')}</p>
-                          <span className="item-play">{formatPlayCount(item.playCount)}</span>
-                        </li>
-                      )
-                    })
-                  }
-                </ul>
-              </div>
+                </Link>
             </div>
-            : <Loading/>
+            <div className="lcrlist">
+              <h3 className="lcrlist-hd"><span>推荐歌单</span></h3>
+              <ul className="lcrlist-bd">
+                {
+                  personalized.length > 0 && personalized.map(item => {
+                    return (
+                      <li className="lcrlist-item" key={item.id}>
+                        <div className="item-img">
+                          <img width="100%" height="100%" src={`${item.picUrl}?param=200y200`} alt=""/>
+                        </div>
+                        <p className="item-title">{item.name.replace(/\s/g, ' ')}</p>
+                        <span className="item-play">{formatPlayCount(item.playCount)}</span>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+            </div>
+          </div>
+          : <Loading/>
         }
       </div>
     );
