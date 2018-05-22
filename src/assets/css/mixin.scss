@@ -1,0 +1,48 @@
+//单行显示省略号
+@mixin no-wrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//多行显示省略号
+@mixin no-wrap-line($line) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  //// eslint-disable-next-line
+  ///* autoprefixer: off */
+  //-webkit-box-orient: vertical;
+  ///* autoprefixer: on */
+}
+
+//图片
+@mixin img-full($attr:cover) {
+  width: 100%;
+  height: 100%;
+  object-fit: $attr;
+}
+
+//背景图
+@mixin bg-full($p:center,$s:contain) {
+  background-repeat: no-repeat;
+  background-position: $p;
+  background-size: $s;
+}
+
+@mixin bg-url($url) {
+  background-image: url($url);
+}
+
+//滚动
+@mixin scroll($type: y) {
+  @if $type == x {
+    overflow-x: auto;
+    overflow-y: hidden;
+  } @else {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  -webkit-overflow-scrolling: touch;
+}

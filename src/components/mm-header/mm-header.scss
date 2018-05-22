@@ -1,0 +1,55 @@
+@import "~assets/css/mixin.scss";
+@import "~assets/css/var.scss";
+
+.mm-header {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+  background-color: $theme-bg-color;
+  .mm-header-left {
+    position: absolute;
+    top: 45px;
+    left: 40px;
+    width: 70px;
+    height: 70px;
+    background-image: url("ov.png");
+    @include bg-full;
+  }
+  .mm-header-title {
+    display: flex;
+    justify-content: center;
+    padding: 45px 290px;
+    .mm-header-item {
+      flex: 0 0 33.333333%;;
+      height: 70px;
+      @include bg-full($s: cover);
+      &.music{
+        background-image: url("t_actionbar_music_normal.png");
+        &.active {
+          background-image: url("t_actionbar_music_selected.png");
+        }
+      }
+      &.discover{
+        background-image: url("t_actionbar_discover_normal.png");
+        &.active {
+          background-image: url("t_actionbar_discover_selected.png");
+        }
+      }
+      &.video{
+        background-image: url("t_actionbar_video_normal.png");
+        &.active {
+          background-image: url("t_actionbar_video_selected.png");
+        }
+      }
+    }
+  }
+  .mm-header-right {
+    position: absolute;
+    top: 45px;
+    right: 33px;
+    width: 70px;
+    height: 70px;
+    background-image: url("pf.png");
+    @include bg-full;
+  }
+}

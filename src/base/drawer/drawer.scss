@@ -1,0 +1,40 @@
+$classPrefix: drawer;
+.#{$classPrefix} {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  &.#{$classPrefix}-open {
+    .#{$classPrefix}-sidebar{
+      transform: translate3d(0,0,0);
+    }
+    .#{$classPrefix}-overlay{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &-sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1996;
+    width: 900px;
+    background: #fff;
+    transform: translate3d(-100%,0,0);
+    will-change: transform;
+    transition: all .2s ease-out;
+  }
+  &-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-out;
+    background-color: rgba(0,0,0,.4);
+  }
+}
