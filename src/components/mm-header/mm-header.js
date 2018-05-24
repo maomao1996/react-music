@@ -1,5 +1,5 @@
 import React from 'react'
-import {NavLink, withRouter} from 'react-router-dom'
+import {NavLink, withRouter, } from 'react-router-dom'
 
 import './mm-header.scss'
 
@@ -10,6 +10,9 @@ const MmHeader = (props) => {
   const open = function mmHeaderOpenDrawer() {
     props.onOpen(true);
   };
+  const openSearch = function mmHeaderOpenDrawer() {
+    props.history.push('/search')
+  };
   if (showHeader) {
     return (
       <header className="mm-header">
@@ -19,7 +22,7 @@ const MmHeader = (props) => {
           <NavLink className="mm-header-item discover" to="/discover"/>
           {/*<NavLink className="mm-header-item video" to="/video"/>*/}
         </div>
-        <div className="mm-header-right"/>
+        <div className="mm-header-right" onClick={openSearch}/>
       </header>
     )
   } else {

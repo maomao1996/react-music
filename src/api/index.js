@@ -48,3 +48,21 @@ export function getPlayListDetail(id) {
     }
   })
 }
+
+//搜索
+export function search(keywords, page = 0, limit = defaultLimit) {
+  const url = `${URL}/search`;
+  return axios.get(url, {
+    params: {
+      offset: page * limit,
+      limit: limit,
+      keywords
+    }
+  })
+}
+
+//热搜
+export function searchHot() {
+  const url = `${URL}/search/hot`;
+  return axios.get(url)
+}

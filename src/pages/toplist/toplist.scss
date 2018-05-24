@@ -1,3 +1,5 @@
+@import "~assets/css/mixin.scss";
+
 .toplist {
   background-color: #f3f4f6;
   & &-title {
@@ -25,21 +27,19 @@
     .row-item-bd {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-around;
       flex: 1;
+      min-width: 0;
       box-sizing: border-box;
       padding: 0 32px;
-      font-size: 30px;
       border-bottom: 1px solid rgba(0, 0, 0, .1);
       p {
-        margin: 30px 0;
+        height: 40px;
+        line-height: 40px;
+        font-size: 38px;
+        color: #666;
         word-break: keep-all;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        color: #5e605f;
+        @include no-wrap;
       }
     }
   }

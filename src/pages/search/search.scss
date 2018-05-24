@@ -1,0 +1,64 @@
+@import "~assets/css/mixin.scss";
+@import "~assets/css/var.scss";
+
+.search {
+  & &-head {
+    position: relative;
+    padding: 25px 50px 25px 170px;
+    overflow: hidden;
+    background-color: $theme-bg-color;
+    &-left {
+      position: absolute;
+      top: 44px;
+      left: 44px;
+      display: block;
+      width: 72px;
+      height: 72px;
+      @include bg-url("~assets/img/oq.png");
+      @include bg-full;
+    }
+    .search-head-box {
+      border-bottom: 1px solid rgba(255, 255, 255, .6);
+      padding: 25px 0;
+    }
+    .search-head-input {
+      width: 100%;
+      height: 60px;
+      border: 0;
+      line-height: 60px;
+      outline: 0;
+      font-size: 50px;
+      color: rgba(255, 255, 255, .9);
+      background-color: transparent;
+      &::-webkit-input-placeholder{
+        color: rgba(255, 255, 255, .6);
+      }
+    }
+  }
+
+  //热门搜索
+  & .search-hots {
+    width: 100%;
+    h1 {
+      height: 100px;
+      padding-top: 30px;
+      padding-left: 30px;
+      line-height: 100px;
+      font-size: 36px;
+      color: #888;
+    }
+    ul {
+      font-size: 0;
+    }
+    li {
+      display: inline-block;
+      border: 1px solid #ccc;
+      padding: 30px;
+      margin-left: 30px;
+      margin-bottom: 30px;
+      border-radius: 100px;
+      font-size: 42px;
+      color: #000;
+    }
+  }
+}

@@ -7,6 +7,7 @@ import Drawer from 'base/drawer/drawer'
 import MmHeader from 'components/mm-header/mm-header'
 
 const Discover = asyncComponent(() => import('pages/discover/discover'));
+const Search = asyncComponent(() => import('pages/search/search'));
 const TopList = asyncComponent(() => import('pages/toplist/toplist'));
 
 class App extends Component {
@@ -32,6 +33,7 @@ class App extends Component {
           <main className="mm-main">
             <Switch>
               <Route path="/discover" component={Discover}/>
+              <Route path="/search" component={Search}/>
               <Route path="/toplist" component={TopList}/>
               <Redirect to="/discover"/>
             </Switch>

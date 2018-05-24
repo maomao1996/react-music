@@ -7,14 +7,13 @@
 
 //多行显示省略号
 @mixin no-wrap-line($line) {
-  text-overflow: ellipsis;
-  overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: $line;
-  //// eslint-disable-next-line
-  ///* autoprefixer: off */
-  //-webkit-box-orient: vertical;
-  ///* autoprefixer: on */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
 }
 
 //图片
@@ -25,10 +24,10 @@
 }
 
 //背景图
-@mixin bg-full($p:center,$s:contain) {
-  background-repeat: no-repeat;
+@mixin bg-full($p:center,$s:contain,$r:no-repeat) {
   background-position: $p;
   background-size: $s;
+  background-repeat: $r;
 }
 
 @mixin bg-url($url) {

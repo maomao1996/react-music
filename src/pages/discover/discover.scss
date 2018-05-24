@@ -66,7 +66,7 @@
           position: absolute;
           top: 60%;
           left: 50%;
-          font-size: $font-size-small-ss;
+          font-size: $font-size-small;
           color: #d33a31;
           transform: translate(-50%, -50%);
         }
@@ -102,7 +102,7 @@
       height: 160px;
       padding-left: 18px;
       line-height: 160px;
-      font-size: 46px;
+      font-size: $font-size-large;
       font-weight: 700;
       span {
         padding-right: 50px;
@@ -147,7 +147,7 @@
         margin: 20px 10px;
         line-height: 50px;
         color: #333;
-        font-size: $font-size-small-s;
+        font-size: $font-size-small-x;
         word-wrap: break-word;
         word-break: break-all;
         @include no-wrap-line(2);
@@ -161,7 +161,7 @@
         height: 40px;
         line-height: 40px;
         padding-left: 40px;
-        font-size: 30px;
+        font-size: $font-size-small;
         color: #fff;
         @include bg-url("~assets/img/discover/zf.png");
         @include bg-full($p: left 0, $s: 30px)
