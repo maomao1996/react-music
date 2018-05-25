@@ -1,0 +1,37 @@
+.song-wrapper {
+  & .song-item {
+    display: flex;
+    padding-left: 20px;
+    &-num {
+      width: 160px;
+      height: 160px;
+      margin-left: -20px;
+      text-align: center;
+      line-height: 160px;
+    }
+    &-info {
+      flex: 1;
+      padding: 25px 0;
+      border-bottom: 1px solid #eee;
+      h2 {
+        height: 50px;
+        margin-bottom: 20px;
+        line-height: 50px;
+        font-size: 46px;
+        color: #333;
+      }
+      p {
+        height: 50px;
+        line-height: 50px;
+        font-size: 34px;
+        color: #777;
+        span {
+          color: #507daf;
+        }
+      }
+    }
+    &-btn {
+
+    }
+  }
+}
