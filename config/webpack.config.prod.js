@@ -104,6 +104,7 @@ module.exports = {
       'base': resolve('src/base'),
       'common': resolve('src/common'),
       'components': resolve('src/components'),
+      'model': resolve('src/model'),
       'pages': resolve('src/pages')
     },
     plugins: [
