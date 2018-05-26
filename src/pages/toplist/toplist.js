@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
 
 import Loading from 'base/loading/loading'
 import MmNav from 'components/mm-nav/mm-nav'
+import Scroll from 'base/scroll/scroll'
 
 import {HTTP_OK} from 'common/config'
 import {getTopListDetail} from 'api'
@@ -63,12 +63,14 @@ class TopList extends Component {
         <MmNav title="排行榜"/>
         {
           officialList.length > 0 ?
-            <div className="mm-content">
+            <Scroll className="mm-content">
               <h1 className="toplist-title">官方榜单</h1>
               <div className="row-list">
                 {
                   officialList.map(item => (
-                    <Link to={`/playlist/${item.id}`} className="row-item" key={item.id}>
+                    <div className="row-item" onClick={() => {
+                      this.props.history.push({pathname: `/playlist/${item.id}`})
+                    }} key={item.id}>
                       <div className="item-hd">
                         <img src={`${item.coverImgUrl}?param=150y150`} alt=""/>
                         <p>{item.updateFrequency}</p>
@@ -80,7 +82,7 @@ class TopList extends Component {
                           ))
                         }
                       </div>
-                    </Link>
+                    </div>
                   ))
                 }
                 {
@@ -105,7 +107,9 @@ class TopList extends Component {
               <div className="column-list">
                 {
                   globalList.map(item => (
-                    <div className="column-item" key={item.id}>
+                    <div className="column-item" onClick={() => {
+                      this.props.history.push({pathname: `/playlist/${item.id}`})
+                    }} key={item.id}>
                       <div className="item-hd">
                         <img src={`${item.coverImgUrl}?param=150y150`} alt=""/>
                         <p>{item.updateFrequency}</p>
@@ -115,7 +119,7 @@ class TopList extends Component {
                   ))
                 }
               </div>
-            </div>
+            </Scroll>
             : <Loading/>
         }
       </div>

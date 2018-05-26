@@ -3,6 +3,7 @@ import {Link, withRouter} from "react-router-dom"
 
 import Slide from 'base/slide/silde'
 import Loading from 'base/loading/loading'
+import Scroll from 'base/scroll/scroll'
 
 import {HTTP_OK} from 'common/config'
 import {formatPlayCount} from 'common/util'
@@ -49,17 +50,17 @@ class Discover extends Component {
       <div className="discover mm-music">
         {
           personalized.length > 0 && banners.length > 0 ?
-            <div className="Recommend">
+            <Scroll className="Recommend" options={{bounce: false}}>
               {this.state.banners && <div className="banner"><Slide ref="slide" data={this.state.banners}/></div>}
               <div className="menu">
-                <div className="menu-item">
-                  <div className="menu-icon fm"/>
-                  <p>私人FM</p>
-                </div>
-                <div className="menu-item">
-                  <div className="menu-icon daily" data-date={getDate}/>
-                  <p>每日推荐</p>
-                </div>
+                {/*<div className="menu-item">*/}
+                {/*<div className="menu-icon fm"/>*/}
+                {/*<p>私人FM</p>*/}
+                {/*</div>*/}
+                {/*<div className="menu-item">*/}
+                {/*<div className="menu-icon daily" data-date={getDate}/>*/}
+                {/*<p>每日推荐</p>*/}
+                {/*</div>*/}
                 <div className="menu-item">
                   <div className="menu-icon playlist"/>
                   <p>歌单</p>
@@ -68,26 +69,28 @@ class Discover extends Component {
                   <div className="menu-icon rank"/>
                   <p>排行榜</p>
                 </Link>
-            </div>
-            <div className="lcrlist">
-              <h3 className="lcrlist-hd"><span>推荐歌单</span></h3>
-              <ul className="lcrlist-bd">
-                {
-                  personalized.length > 0 && personalized.map(item => {
-                    return (
-                      <li className="lcrlist-item" key={item.id}>
-                        <div className="item-img" data-play={formatPlayCount(item.playCount)}>
-                          <img width="100%" height="100%" src={`${item.picUrl}?param=200y200`} alt=""/>
-                        </div>
-                        <p className="item-title">{item.name.replace(/\s/g, ' ')}</p>
-                      </li>
-                    )
-                  })
-                }
-              </ul>
-            </div>
-          </div>
-          : <Loading/>
+              </div>
+              <div className="lcrlist">
+                <h3 className="lcrlist-hd"><span>推荐歌单</span></h3>
+                <ul className="lcrlist-bd">
+                  {
+                    personalized.length > 0 && personalized.map(item => {
+                      return (
+                        <li className="lcrlist-item" onClick={() => {
+                          this.props.history.push({pathname: `/playlist/${item.id}`})
+                        }} key={item.id}>
+                          <div className="item-img" data-play={formatPlayCount(item.playCount)}>
+                            <img width="100%" height="100%" src={`${item.picUrl}?param=200y200`} alt=""/>
+                          </div>
+                          <p className="item-title">{item.name.replace(/\s/g, ' ')}</p>
+                        </li>
+                      )
+                    })
+                  }
+                </ul>
+              </div>
+            </Scroll>
+            : <Loading/>
         }
       </div>
     );

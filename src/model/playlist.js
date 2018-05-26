@@ -1,4 +1,4 @@
-import formatSongs, {createSongs} from "./song";
+import formatSongs from "./song";
 
 /**
  * 歌单类模型

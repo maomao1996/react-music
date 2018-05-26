@@ -36,6 +36,9 @@
         }
       }
     }
+    &:nth-last-of-type(1) .song-item-info {
+      border: 0;
+    }
     &-btn {
 
     }

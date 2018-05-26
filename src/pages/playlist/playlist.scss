@@ -1,0 +1,63 @@
+@import "~assets/css/var.scss";
+@import "~assets/css/mixin.scss";
+@import "~assets/css/playCount.scss";
+
+.playlist {
+  height: 100%;
+  & .mm-blur-min {
+    position: fixed;
+    height: 160px;
+    .mm-blur-bg {
+      top: 160px;
+      &:after {
+        background-color: rgba(0,0,0,.2);
+      }
+    }
+  }
+  & .mm-content {
+    position: relative;
+  }
+  & &-header {
+    position: relative;
+    padding: 45px;
+    overflow: hidden;
+    &-wrapper {
+      position: relative;
+      z-index: 2;
+      display: flex;
+    }
+    .playlist-header-hd {
+      width: 300px;
+      height: 300px;
+      @include playCount;
+      img {
+        @include img-full;
+      }
+    }
+    .playlist-header-bd {
+      min-width: 0;
+      flex: 1;
+      margin-left: 50px;
+      h1 {
+        height: 140px;
+        margin-bottom: 30px;
+        line-height: 70px;
+        color: #fff;
+        font-weight: 700;
+      }
+      .playlist-header-user {
+        img {
+          width: 60px;
+          height: 60px;
+          margin-right: 30px;
+          border-radius: 50%;
+          vertical-align: middle;
+        }
+        span {
+          font-size: 32px;
+          color: rgba(255, 255, 255, .5);
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
-@import "~assets/css/mixin.scss";
 @import "~assets/css/var.scss";
+@import "~assets/css/mixin.scss";
 
 .mm-nav {
   position: relative;
@@ -8,10 +8,12 @@
   line-height: 120px;
   color: #fff;
   background-color: $theme-bg-color;
+  overflow: hidden;
   & &-left {
     position: absolute;
     top: 44px;
     left: 44px;
+    z-index: 1;
     display: block;
     width: 72px;
     height: 72px;
@@ -19,11 +21,14 @@
     @include bg-full;
   }
   & &-title {
+    position: relative;
+    z-index: 1;
     width: 100%;
     font-size: $font-size-medium-x;
   }
   & &-right {
     position: absolute;
     right: 0;
+    z-index: 1;
   }
 }

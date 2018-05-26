@@ -9,6 +9,7 @@ import MmHeader from 'components/mm-header/mm-header'
 const Discover = asyncComponent(() => import('pages/discover/discover'));
 const Search = asyncComponent(() => import('pages/search/search'));
 const TopList = asyncComponent(() => import('pages/toplist/toplist'));
+const PlayList = asyncComponent(() => import('pages/playlist/playlist'));
 
 class App extends Component {
   
@@ -35,6 +36,7 @@ class App extends Component {
               <Route path="/discover" component={Discover}/>
               <Route path="/search" component={Search}/>
               <Route path="/toplist" component={TopList}/>
+              <Route path="/playlist/:id" component={PlayList}/>
               <Redirect to="/discover"/>
             </Switch>
           </main>

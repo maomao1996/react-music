@@ -16,11 +16,11 @@
 }
 
 .mm-block {
-  display: block!important;
+  display: block !important;
 }
 
 .mm-none {
-  display: none!important;
+  display: none !important;
 }
 
 .mm-music {
@@ -46,7 +46,7 @@
 
 .mm-content {
   flex: 1;
-  @include scroll;
+  overflow: hidden;
 }
 
 //position
@@ -61,8 +61,37 @@
 //  top: 160px;
 //  bottom: 0;
 //  width: 100%;
-//  @include scroll;
+//  overflow: hidden;
 //}
+
+.mm-blur {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  overflow: hidden;
+  & .mm-blur-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vw;
+    filter: blur(30Px);
+    transform: scale(1.5);
+    @include bg-full($p: 50%, $s: cover);
+    &:after {
+      content: " ";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, .25);
+    }
+  }
+}
 
 img {
   max-width: 100%;

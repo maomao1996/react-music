@@ -15,6 +15,7 @@ const DEFAULT_OPTIONS = {
 
 class Scroll extends Component {
   static propTypes = {
+    className: PropTypes.string,
     options: PropTypes.object
   };
   
@@ -22,16 +23,18 @@ class Scroll extends Component {
     options: {}
   };
   
-  componentDidMount(){
+  componentDidMount() {
     this.scrollWrapper = ReactDOM.findDOMNode(this.refs.scrollWrapper);
-    if(!this.scroll){
-      let options = Object.assign({},DEFAULT_OPTIONS,this.props.options);
-      this.scroll = new BScroll(this.scrollWrapper,options)
+    if (!this.scroll) {
+      let options = Object.assign({}, DEFAULT_OPTIONS, this.props.options);
+      this.scroll = new BScroll(this.scrollWrapper, options)
     }
   }
+  
   render() {
+    const {className} = this.props;
     return (
-      <div className="scroll-wrapper" ref="scrollWrapper">
+      <div className={`scroll-wrapper ${className}`} ref="scrollWrapper">
         {/*获取子组件*/}
         <div>{this.props.children}</div>
       </div>
