@@ -1,0 +1,40 @@
+@import "~assets/css/mixin.scss";
+@import "~assets/css/var.scss";
+
+.search-list {
+  position: relative;
+  height: 100%;
+  & &-tab {
+    display: flex;
+    padding-bottom: 20px;
+    line-height: 100px;
+    color: rgba(255, 255, 255, .5);
+    background-color: $theme-bg-color;
+    li {
+      flex: 1;
+      text-align: center;
+      span {
+        padding-bottom: 15px;
+      }
+      &.active span {
+        font-weight: 700;
+        color: #fff;
+        border-bottom: 6px solid #fff;
+      }
+    }
+  }
+  & &-content {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include scroll;
+    .search-content-item {
+      display: none;
+      &.active{
+        display: block;
+      }
+    }
+  }
+}

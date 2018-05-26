@@ -1,0 +1,29 @@
+//播放数量
+@mixin playCount {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .35) 0, rgba(0, 0, 0, .2) 80%, rgba(0, 0, 0, 0) 100%);
+  }
+  &:after {
+    content: attr(data-play);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 40px;
+    font-size: $font-size-small;
+    color: #fff;
+    @include bg-url("~assets/img/discover/zf.png");
+    @include bg-full($p: left 0, $s: 30px)
+  }
+}

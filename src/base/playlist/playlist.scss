@@ -30,6 +30,7 @@
         line-height: 50px;
         font-size: 34px;
         color: #777;
+        @include no-wrap;
       }
     }
     &:nth-last-of-type(1) .playlist-item-bd {

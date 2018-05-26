@@ -40,8 +40,8 @@ export function getTopListDetail() {
 }
 
 //获取歌单详情
-export function getPlayListDetail(id) {
-  const url = `${URL}/toplist/detail/mm`;
+export function getPlaylistDetail(id) {
+  const url = `${URL}/playlist/detail`;
   return axios.get(url, {
     params: {
       id
@@ -49,13 +49,14 @@ export function getPlayListDetail(id) {
   })
 }
 
-//搜索
-export function search(keywords, page = 0, limit = defaultLimit) {
+// 搜索
+export function search(keywords, type = 1, page = 0, limit = defaultLimit) {
   const url = `${URL}/search`;
   return axios.get(url, {
     params: {
       offset: page * limit,
-      limit: limit,
+      type,
+      limit,
       keywords
     }
   })

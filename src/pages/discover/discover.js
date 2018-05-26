@@ -76,11 +76,10 @@ class Discover extends Component {
                   personalized.length > 0 && personalized.map(item => {
                     return (
                       <li className="lcrlist-item" key={item.id}>
-                        <div className="item-img">
+                        <div className="item-img" data-play={formatPlayCount(item.playCount)}>
                           <img width="100%" height="100%" src={`${item.picUrl}?param=200y200`} alt=""/>
                         </div>
                         <p className="item-title">{item.name.replace(/\s/g, ' ')}</p>
-                        <span className="item-play">{formatPlayCount(item.playCount)}</span>
                       </li>
                     )
                   })

@@ -1,3 +1,6 @@
+@import "~assets/css/mixin.scss";
+@import "~assets/css/var.scss";
+
 .song-wrapper {
   & .song-item {
     display: flex;
@@ -11,7 +14,8 @@
     }
     &-info {
       flex: 1;
-      padding: 25px 0;
+      min-width: 0;
+      padding: 25px 15px 25px 0;
       border-bottom: 1px solid #eee;
       h2 {
         height: 50px;
@@ -19,12 +23,14 @@
         line-height: 50px;
         font-size: 46px;
         color: #333;
+        @include no-wrap;
       }
       p {
         height: 50px;
         line-height: 50px;
         font-size: 34px;
         color: #777;
+        @include no-wrap;
         span {
           color: #507daf;
         }
