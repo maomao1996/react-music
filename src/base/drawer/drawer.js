@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import classNames from "classnames";
 
 import './drawer.scss'
@@ -25,5 +26,10 @@ class Drawer extends Component {
     )
   }
 }
+
+Drawer.propTypes = {
+  isDrawer: PropTypes.bool.isRequired,
+  className: PropTypes.string
+};
 
 export default Drawer

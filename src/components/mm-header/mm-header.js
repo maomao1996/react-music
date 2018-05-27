@@ -1,5 +1,5 @@
 import React from 'react'
-import {NavLink, withRouter, } from 'react-router-dom'
+import {NavLink, withRouter} from 'react-router-dom'
 
 import './mm-header.scss'
 
@@ -13,21 +13,17 @@ const MmHeader = (props) => {
   const openSearch = function mmHeaderOpenDrawer() {
     props.history.push('/search')
   };
-  if (showHeader) {
-    return (
-      <header className="mm-header">
-        <div className="mm-header-left" onClick={open}/>
-        <div className="mm-header-title">
-          {/*<NavLink className="mm-header-item music" to="/music"/>*/}
-          <NavLink className="mm-header-item discover" to="/discover"/>
-          {/*<NavLink className="mm-header-item video" to="/video"/>*/}
-        </div>
-        <div className="mm-header-right" onClick={openSearch}/>
-      </header>
-    )
-  } else {
-    return null
-  }
+  return (
+    showHeader && <header className="mm-header">
+      <div className="mm-header-left" onClick={open}/>
+      <div className="mm-header-title">
+        {/*<NavLink className="mm-header-item music" to="/music"/>*/}
+        <NavLink className="mm-header-item discover" to="/discover"/>
+        {/*<NavLink className="mm-header-item video" to="/video"/>*/}
+      </div>
+      <div className="mm-header-right" onClick={openSearch}/>
+    </header>
+  )
 };
 
 export default withRouter(MmHeader)

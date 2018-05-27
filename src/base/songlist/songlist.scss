@@ -5,14 +5,14 @@
   & .song-item {
     display: flex;
     padding-left: 20px;
-    &-num {
+    .song-num {
       width: 160px;
       height: 160px;
       margin-left: -20px;
       text-align: center;
       line-height: 160px;
     }
-    &-info {
+    .song-info {
       flex: 1;
       min-width: 0;
       padding: 25px 15px 25px 0;
@@ -36,10 +36,10 @@
         }
       }
     }
-    &:nth-last-of-type(1) .song-item-info {
+    &:nth-last-of-type(1) .song-info {
       border: 0;
     }
-    &-btn {
+    .song-btn {
 
     }
   }

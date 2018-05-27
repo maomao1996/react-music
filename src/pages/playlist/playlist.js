@@ -19,9 +19,9 @@ class PlayList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
-      loading: true,
-      defaultName
+      data: {},//歌单数据
+      loading: true,//加载动画
+      defaultName, //默认歌单名称
     }
   }
   
@@ -71,7 +71,7 @@ class PlayList extends Component {
                 </div>
               </header>
               {
-                tracks && tracks.length > 0 && <BaseSongList listType={1} list={tracks}/>
+                tracks && tracks.length > 0 && <BaseSongList showRank list={tracks} onItemClick={id => {}}/>
               }
             </Scroll>
         }

@@ -5,14 +5,14 @@
   & .playlist-item {
     display: flex;
     padding: 10px 0 10px 20px;
-    &-hd {
+    .playlist-hd {
       width: 160px;
       height: 160px;
       margin-right: 30px;
       border-radius: 10px;
       overflow: hidden;
     }
-    &-bd {
+    .playlist-bd {
       flex: 1;
       min-width: 0;
       padding: 25px 15px 25px 0;
@@ -33,7 +33,7 @@
         @include no-wrap;
       }
     }
-    &:nth-last-of-type(1) .playlist-item-bd {
+    &:nth-last-of-type(1) .playlist-bd {
       border: 0;
     }
   }

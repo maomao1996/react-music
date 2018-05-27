@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {withRouter} from 'react-router-dom'
 import classNames from 'classnames'
 
 import BaseSongList from 'base/songlist/songlist'
@@ -46,6 +47,10 @@ class SearchList extends Component {
       this.search(newProps.query, newState.type)
     }
     return true
+  }
+  
+  openPlayList(id) {
+    this.props.history.push({pathname: `/playlist/${id}`})
   }
   
   //切换Tab
@@ -104,13 +109,15 @@ class SearchList extends Component {
           <div className={classNames('search-content-item', {active: type === 1})}>
             {
               loading ? <Loading/>
-                : songs.length > 0 && <BaseSongList list={songs}/>
+                : songs.length > 0 &&
+                <BaseSongList list={songs} onItemClick={id => {}}/>
             }
           </div>
           <div className={classNames('search-content-item', {active: type === 1000})}>
             {
               loading ? <Loading/>
-                : playlists.length > 0 && <BasePlayList list={playlists}/>
+                : playlists.length > 0 &&
+                <BasePlayList list={playlists} onItemClick={id => this.openPlayList(id)}/>
             }
           </div>
         </div>
@@ -119,4 +126,4 @@ class SearchList extends Component {
   }
 }
 
-export default SearchList
+export default withRouter(SearchList)

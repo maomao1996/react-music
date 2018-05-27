@@ -1,14 +1,15 @@
 import React, {Component} from 'react'
-import {Link, withRouter} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 import Slide from 'base/slide/silde'
 import Loading from 'base/loading/loading'
 import Scroll from 'base/scroll/scroll'
-
-import {HTTP_OK} from 'common/config'
-import {formatPlayCount} from 'common/util'
+import BaseSheetList from 'base/sheetlist/sheetlist'
 
 import {getBanner, getPersonalized} from 'api'
+import {HTTP_OK} from 'common/config'
+import {formatPlayListMin} from 'model/playlist'
+
 
 import './discover.scss'
 
@@ -19,7 +20,7 @@ class Discover extends Component {
     super(props);
     this.state = {
       banners: [],// banner数组
-      getDate: new Date().getDate(),// 当前日期
+      // getDate: new Date().getDate(),// 当前日期
       personalized: [],// 推荐歌单
     }
   }
@@ -38,14 +39,14 @@ class Discover extends Component {
     .then(res => {
       if (res.data.code === HTTP_OK) {
         this.setState({
-          personalized: res.data.result
+          personalized: formatPlayListMin(res.data.result)
         })
       }
     });
   }
   
   render() {
-    const {banners, personalized, getDate} = this.state;
+    const {banners, personalized} = this.state;
     return (
       <div className="discover mm-music">
         {
@@ -61,33 +62,20 @@ class Discover extends Component {
                 {/*<div className="menu-icon daily" data-date={getDate}/>*/}
                 {/*<p>每日推荐</p>*/}
                 {/*</div>*/}
-                <div className="menu-item">
+                <Link className="menu-item" to="/sheetlist">
                   <div className="menu-icon playlist"/>
                   <p>歌单</p>
-                </div>
-                <Link to="/toplist" className="menu-item">
+                </Link>
+                <Link className="menu-item" to="/toplist">
                   <div className="menu-icon rank"/>
                   <p>排行榜</p>
                 </Link>
               </div>
               <div className="lcrlist">
-                <h3 className="lcrlist-hd"><span>推荐歌单</span></h3>
-                <ul className="lcrlist-bd">
-                  {
-                    personalized.length > 0 && personalized.map(item => {
-                      return (
-                        <li className="lcrlist-item" onClick={() => {
-                          this.props.history.push({pathname: `/playlist/${item.id}`})
-                        }} key={item.id}>
-                          <div className="item-img" data-play={formatPlayCount(item.playCount)}>
-                            <img width="100%" height="100%" src={`${item.picUrl}?param=200y200`} alt=""/>
-                          </div>
-                          <p className="item-title">{item.name.replace(/\s/g, ' ')}</p>
-                        </li>
-                      )
-                    })
-                  }
-                </ul>
+                <h3 className="lcrlist-hd" onClick={() => {
+                  this.props.history.push('/sheetlist')
+                }}><span>推荐歌单</span></h3>
+                <BaseSheetList list={personalized} onItemClick={id => this.props.history.push(`/playlist/${id}`)}/>
               </div>
             </Scroll>
             : <Loading/>
@@ -97,4 +85,4 @@ class Discover extends Component {
   }
 }
 
-export default withRouter(Discover)
+export default Discover

@@ -39,6 +39,18 @@ export function getTopListDetail() {
   return axios.get(url)
 }
 
+//获取歌单 ( 网友精选碟 )
+export function getTopPlaylist(page = 0, limit = defaultLimit, order = 'hot') {
+  const url = `${URL}/top/playlist`;
+  return axios.get(url, {
+    params: {
+      offset: page * limit,
+      order,
+      limit
+    }
+  })
+}
+
 //获取歌单详情
 export function getPlaylistDetail(id) {
   const url = `${URL}/playlist/detail`;

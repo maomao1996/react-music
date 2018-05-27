@@ -1,0 +1,11 @@
+@import "~assets/css/var.scss";
+@import "~assets/css/mixin.scss";
+@import "~assets/css/playCount.scss";
+
+.sheetlist {
+  .sheetlist-item {
+    flex: 0 0 50%;
+  }
+}
+
+
