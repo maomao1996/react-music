@@ -1,0 +1,154 @@
+@import "~assets/css/mixin.scss";
+
+.player {
+  & .player-full {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1966;
+    display: none;
+    background: #000;
+    &.player-full-enter {
+      transform: translate3d(0, 100%, 0);
+      opacity: 0;
+    }
+    &.player-full-enter-active {
+      opacity: 1;
+      transition: all .15s ease-out;
+      transform: translate3d(0, 0, 0);
+    }
+    &.player-full-exit {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+    &.player-full-exit-active {
+      transition: all .15s ease-out;
+      transform: translate3d(0, 100%, 0);
+      opacity: 0;
+    }
+    .player-bg {
+      width: 100%;
+      height: 100%;
+      filter: blur(30Px);
+      transform: scale(1.5);
+      @include bg-full;
+      &:after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, .25);
+      }
+    }
+    .header {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1;
+      height: 120px;
+      padding: 20px 170px;
+      border-bottom: 1px solid rgba(255, 255, 255, .15);
+      .header-back {
+        position: absolute;
+        top: 48px;
+        left: 44px;
+        display: block;
+        width: 72px;
+        height: 72px;
+        @include bg-url("~assets/img/oq.png");
+        @include bg-full;
+      }
+      h1 {
+        height: 60px;
+        line-height: 80px;
+        font-size: 46px;
+        color: #fff;
+      }
+      h2 {
+        height: 60px;
+        line-height: 60px;
+        font-size: 36px;
+        color: rgba(255, 255, 255, .4);
+      }
+    }
+    .middle {
+      position: absolute;
+      top: 160px;
+      right: 0;
+      left: 0;
+      bottom: 360px;
+    }
+    .footer {
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 20px;
+      height: 320px;
+      .progress-wrapper {
+        height: 68px;
+      }
+      .btn-wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 252px;
+        .btn {
+          @include bg-full;
+          &.btn-mode {
+            width: 162px;
+            height: 162px;
+            margin-right: 30px;
+            &.mode-list {
+              @include bg-url("~assets/img/player/mode-list.png");
+            }
+            &.mode-random {
+              @include bg-url("~assets/img/player/mode-random.png");
+            }
+            &.mode-single {
+              @include bg-url("~assets/img/player/mode-single.png");
+            }
+          }
+          &.btn-prev {
+            width: 214px;
+            height: 214px;
+            @include bg-url("~assets/img/player/prev.png");
+          }
+          &.btn-play {
+            width: 252px;
+            height: 252px;
+            @include bg-url("~assets/img/player/play.png");
+            &.btn-pause {
+              @include bg-url("~assets/img/player/pause.png");
+            }
+          }
+          &.btn-next {
+            width: 214px;
+            height: 214px;
+            @include bg-url("~assets/img/player/next.png");
+          }
+          &.btn-list {
+            width: 162px;
+            height: 162px;
+            margin-left: 30px;
+            @include bg-url("~assets/img/player/list.png");
+          }
+        }
+      }
+    }
+  }
+  & .player-min {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 50px;
+    background: #e5473c;
+    color: #fff;
+  }
+}

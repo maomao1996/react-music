@@ -5,6 +5,7 @@ import asyncComponent from 'common/asyncComponent'
 
 import Drawer from 'base/drawer/drawer'
 import MmHeader from 'components/mm-header/mm-header'
+import Player from 'components/player/player'
 
 const Discover = asyncComponent(() => import('pages/discover/discover'));
 const Search = asyncComponent(() => import('pages/search/search'));
@@ -42,6 +43,7 @@ class App extends Component {
               <Redirect to="/discover"/>
             </Switch>
           </main>
+          <Player/>
         </Drawer>
       </Router>
     )
