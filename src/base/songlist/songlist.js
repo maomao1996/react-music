@@ -11,7 +11,7 @@ const BaseSongList = (props) => {
     <div className="song-wrapper">
       {
         list.length > 0 && list.map((item, index) => (
-          <div className="song-item" onClick={() => onItemClick(item.id)} key={item.id}>
+          <div className="song-item" onClick={() => onItemClick(item.id,index)} key={item.id}>
             {
               showRank && <div className="song-num">{index + 1}</div>
             }

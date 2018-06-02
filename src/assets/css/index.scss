@@ -1,4 +1,5 @@
 @import "reset.css";
+@import "var.scss";
 @import "mixin.scss";
 
 //#root, body, html {
@@ -32,6 +33,7 @@
 }
 
 .mm-main {
+  min-height: 0;
   flex: 1;
   overflow: hidden;
 }
@@ -45,8 +47,10 @@
 }
 
 .mm-content {
+  min-height: 0;
   flex: 1;
   overflow: hidden;
+  background-color: $theme-main-color;
 }
 
 //position

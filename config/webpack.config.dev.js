@@ -100,7 +100,8 @@ module.exports = {
       'common': resolve('src/common'),
       'components': resolve('src/components'),
       'model': resolve('src/model'),
-      'pages': resolve('src/pages')
+      'pages': resolve('src/pages'),
+      'store': resolve('src/store')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).

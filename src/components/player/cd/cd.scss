@@ -5,9 +5,9 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  &.pause{
-    .needle{
-      transform: translate3d(-35px,0,0) rotate(-30deg);
+  &.pause {
+    .needle {
+      transform: translate3d(-35px, 0, 0) rotate(-30deg);
     }
     .disc-box {
       animation-play-state: paused;
@@ -22,7 +22,7 @@
     height: 414px;
     @include bg-url("~assets/img/player/needle.png");
     @include bg-full;
-    transform: translate3d(-35px,0,0);
+    transform: translate3d(-35px, 0, 0);
     transform-origin: 48px 48px;
     transition: all .3s;
   }
@@ -40,7 +40,7 @@
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: rgba(255,255,255,.1);
+      background: rgba(255, 255, 255, .1);
       @include bg-url("~assets/img/player/disc.png");
       @include bg-full;
     }
@@ -50,16 +50,16 @@
       left: 50%;
       width: 530px;
       height: 530px;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
     }
   }
 }
 
 @keyframes circle-rotate {
-  0{
+  0% {
     transform: rotate(0);
   }
   100% {
-       transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }

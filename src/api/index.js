@@ -79,3 +79,13 @@ export function searchHot() {
   const url = `${URL}/search/hot`;
   return axios.get(url)
 }
+
+//获取歌曲详情
+export function getMusicDetail(ids) {
+  const url = `${URL}/song/detail`;
+  return axios.get(url, {
+    params: {
+      ids
+    }
+  })
+}

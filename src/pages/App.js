@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom"
+import {connect} from 'react-redux'
 
 import asyncComponent from 'common/asyncComponent'
-
 import Drawer from 'base/drawer/drawer'
 import MmHeader from 'components/mm-header/mm-header'
 import Player from 'components/player/player'
@@ -13,8 +13,8 @@ const TopList = asyncComponent(() => import('pages/toplist/toplist'));
 const PlayList = asyncComponent(() => import('pages/playlist/playlist'));
 const SheetList = asyncComponent(() => import('pages/sheetlist/sheetlist'));
 
+
 class App extends Component {
-  
   constructor(props) {
     super(props);
     this.state = {
@@ -43,11 +43,18 @@ class App extends Component {
               <Redirect to="/discover"/>
             </Switch>
           </main>
-          <Player/>
+          {
+            this.props.showPlayer && <Player/>
+          }
         </Drawer>
       </Router>
     )
   }
 }
 
-export default App;
+//映射Redux全局的state到组件的props上
+const mapStateToProps = state => ({
+  showPlayer: state.showPlayer
+});
+
+export default connect(mapStateToProps)(App)

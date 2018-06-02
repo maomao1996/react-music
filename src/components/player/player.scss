@@ -1,3 +1,4 @@
+@import "~assets/css/var.scss";
 @import "~assets/css/mixin.scss";
 
 .player {
@@ -11,7 +12,7 @@
     display: none;
     background: #000;
     &.player-full-enter {
-      transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 50%, 0);
       opacity: 0;
     }
     &.player-full-enter-active {
@@ -25,7 +26,7 @@
     }
     &.player-full-exit-active {
       transition: all .15s ease-out;
-      transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 50%, 0);
       opacity: 0;
     }
     .player-bg {
@@ -56,7 +57,7 @@
       border-bottom: 1px solid rgba(255, 255, 255, .15);
       .header-back {
         position: absolute;
-        top: 48px;
+        top: 44px;
         left: 44px;
         display: block;
         width: 72px;
@@ -66,15 +67,17 @@
       }
       h1 {
         height: 60px;
-        line-height: 80px;
+        line-height: 70px;
         font-size: 46px;
         color: #fff;
+        @include no-wrap;
       }
       h2 {
         height: 60px;
         line-height: 60px;
         font-size: 36px;
         color: rgba(255, 255, 255, .4);
+        @include no-wrap;
       }
     }
     .middle {
@@ -143,12 +146,44 @@
     }
   }
   & .player-min {
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    line-height: 100px;
-    font-size: 50px;
-    background: #e5473c;
-    color: #fff;
+    display: flex;
+    padding: 20px;
+    background: #fff;
+    &-img {
+      width: 110px;
+      height: 110px;
+      margin-right: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    &-info {
+      min-width: 0;
+      flex: 1;
+      font-size: $font-size-small;
+      color: #888;
+      h2, p {
+        @include no-wrap;
+      }
+      h2 {
+        height: 60px;
+        line-height: 60px;
+        font-size: $font-size-medium-x;
+        color: #333;
+      }
+      p {
+        height: 50px;
+        line-height: 50px;
+      }
+    }
+    &-play {
+      width: 90px;
+      height: 90px;
+      margin: 10px;
+      @include bg-full;
+      @include bg-url("~assets/img/player/min-play.png");
+      &.pause {
+        @include bg-url("~assets/img/player/min-pause.png");
+      }
+    }
   }
 }

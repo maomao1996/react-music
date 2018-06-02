@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import classNames from 'classnames'
+import {connect} from 'react-redux'
 
 import BaseSongList from 'base/songlist/songlist'
 import BasePlayList from 'base/playlist/playlist'
 import Loading from 'base/loading/loading'
 
-import {search} from 'api'
+import {setAllPlay, addPlay} from 'store/actions'
+import {search, getMusicDetail} from 'api'
 import {HTTP_OK} from 'common/config'
 import formatSongs from 'model/song'
 import formatPlayList from 'model/playlist'
@@ -49,6 +51,19 @@ class SearchList extends Component {
     return true
   }
   
+  // 播放单曲
+  addPlay(id, index) {
+    getMusicDetail(id)
+    .then(res => {
+      if (res.data.code === HTTP_OK) {
+        let music = this.state.songs[index];
+        music.image = res.data.songs[0].al.picUrl;
+        this.props.addPlay(music);
+      }
+    })
+  }
+  
+  // 跳转歌单
   openPlayList(id) {
     this.props.history.push({pathname: `/playlist/${id}`})
   }
@@ -97,9 +112,8 @@ class SearchList extends Component {
         <ul className="search-list-tab">
           {
             tabData.map(item => (
-              <li className={classNames('search-tab-item', {active: type === item.type})} onClick={() => {
-                this.toggleTab(item.type)
-              }} key={item.type}>
+              <li className={classNames('search-tab-item', {active: type === item.type})}
+                  onClick={() => this.toggleTab(item.type)} key={item.type}>
                 <span>{item.title}</span>
               </li>
             ))
@@ -110,7 +124,7 @@ class SearchList extends Component {
             {
               loading ? <Loading/>
                 : songs.length > 0 &&
-                <BaseSongList list={songs} onItemClick={id => {}}/>
+                <BaseSongList list={songs} onItemClick={(id, index) => this.addPlay(id, index)}/>
             }
           </div>
           <div className={classNames('search-content-item', {active: type === 1000})}>
@@ -126,4 +140,16 @@ class SearchList extends Component {
   }
 }
 
-export default withRouter(SearchList)
+//映射Redux全局的state到组件的props上
+const mapStateToProps = state => ({
+  currentMusic: state.currentMusic,
+  playList: state.playList
+});
+//映射dispatch到props上
+const mapDispatchToProps = dispatch => ({
+  addPlay: status => {
+    dispatch(addPlay(status));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SearchList))

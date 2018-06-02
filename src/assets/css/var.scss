@@ -1,8 +1,13 @@
 //颜色定义规范
+$theme: #e5473c; // 网易红
+//$theme: #31c27c; // 企鹅绿
+//$theme: #0c8ed9; // 酷狗蓝
+//$theme: #f60; // 虾米橙
 
 //主题色
-$theme-color: #e5473c;
-$theme-bg-color: #e5473c;
+$theme-color: $theme;
+$theme-bg-color: $theme;
+$theme-main-color: #f3f4f6;
 
 
 //字体大小定义规范
