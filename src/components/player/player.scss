@@ -147,6 +147,7 @@
   }
   & .player-min {
     display: flex;
+    align-items: center;
     padding: 20px;
     background: #fff;
     &-img {
@@ -178,12 +179,18 @@
     &-play {
       width: 90px;
       height: 90px;
-      margin: 10px;
+      margin-right: 50px;
       @include bg-full;
       @include bg-url("~assets/img/player/min-play.png");
       &.pause {
         @include bg-url("~assets/img/player/min-pause.png");
       }
+    }
+    &-list {
+      width: 90px;
+      height: 90px;
+      @include bg-full;
+      @include bg-url("~assets/img/player/min-list.png");
     }
   }
 }

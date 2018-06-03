@@ -108,7 +108,7 @@ class Scroll extends Component {
   }
   
   render() {
-    const {className} = this.props;
+    const {className = ''} = this.props;
     return (
       <div className={`scroll-wrapper ${className}`} ref="scrollWrapper">
         {/*获取子组件*/}

@@ -41,7 +41,6 @@ function currentIndex(currentIndex = initialState.currentIndex, action) {
 
 // 设置当前播放列表
 function playList(playList = initialState.playList, action) {
-  console.log('action',action);
   switch (action.type) {
     case ActionTypes.SET_PLAYLIST:
       return action.playList;

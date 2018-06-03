@@ -1,0 +1,81 @@
+@import "~assets/css/var.scss";
+@import "~assets/css/mixin.scss";
+
+.musicList {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1990;
+  transform: translate3d(0, 100%, 0);
+  transition: all .2s ease-out;
+  & .musicList-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    opacity: 0;
+    transition: all .1s ease-out .1s;
+  }
+  &.active {
+    transform: translate3d(0, 0, 0);
+    .musicList-mask {
+      opacity: 1;
+    }
+  }
+  & &-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 60vh;
+    border-radius: 10Px 10Px 0 0;
+    overflow: hidden;
+    background-color: $theme-main-color;
+  }
+  & &-header {
+    display: flex;
+    height: 150px;
+    padding: 0 30px;
+    border-bottom: 1px solid #eee;
+    line-height: 150px;
+    font-size: $font-size-large-s;
+  }
+  & &-item {
+    display: flex;
+    height: 140px;
+    margin-left: 30px;
+    border-bottom: 1px solid #eee;
+    line-height: 140px;
+    font-size: $font-size-large-s;
+    color: #333;
+    &:nth-last-of-type(1) {
+      border: 0;
+    }
+    &.active {
+      color: $theme-color;
+      small {
+        color: inherit;
+      }
+    }
+    h2 {
+      min-width: 0;
+      flex: 1;
+      @include no-wrap;
+    }
+    small {
+      font-size: $font-size-small;
+      color: #888;
+    }
+    &-del {
+      width: 110px;
+      height: 100%;
+      @include bg-full;
+      @include bg-url("~assets/img/player/list-del.png");
+    }
+  }
+}
