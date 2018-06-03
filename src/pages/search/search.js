@@ -54,7 +54,7 @@ class Search extends Component {
             <input className='search-head-input' type="text" placeholder='搜索你喜欢的' value={value} autoFocus="autofocus" onChange={this.searchChange} onKeyDown={this.onEnter}/>
           </div>
         </nav>
-        <div className="mm-main">
+        <div className="mm-wrapper">
           <SearchList query={query}/>
           <div className={classNames('search-hots', {'mm-none': query})}>
             <h1>热门搜索</h1>

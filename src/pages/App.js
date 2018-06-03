@@ -31,9 +31,9 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Drawer className="App mm-music" isDrawer={this.state.isDrawer} onOpen={this.openDrawer}>
+        <Drawer className="App mm-wrapper" isDrawer={this.state.isDrawer} onOpen={this.openDrawer}>
           <MmHeader onOpen={this.openDrawer}/>
-          <main className="mm-main">
+          <main className="mm-wrapper">
             <Switch>
               <Route path="/discover" component={Discover}/>
               <Route path="/search" component={Search}/>

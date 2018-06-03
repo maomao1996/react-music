@@ -48,7 +48,7 @@ class Discover extends Component {
   render() {
     const {banners, personalized} = this.state;
     return (
-      <div className="discover mm-music">
+      <div className="discover mm-wrapper">
         {
           personalized.length > 0 && banners.length > 0 ?
             <Scroll className="Recommend" options={{bounce: false}}>
