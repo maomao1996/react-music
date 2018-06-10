@@ -4,11 +4,40 @@ $theme: #e5473c; // 网易红
 //$theme: #0c8ed9; // 酷狗蓝
 //$theme: #f60; // 虾米橙
 
-//主题色
+/**
+ * 主题色
+ *  后缀说明：
+ *    color为文字颜色
+ *    bg为背景颜色
+ * 若不带color或者bg后缀均为背景颜色（特殊说明除外）
+ */
 $theme-color: $theme;
-$theme-bg-color: $theme;
+$theme-bg: $theme;
 $theme-main-color: #f3f4f6;
+$theme-sub-bg: #fff;
+$theme-sub-color: #fff;
 
+$theme-bg-color: $theme; //后续将用$theme-bg取代
+
+//header组件（一级导航栏）
+$header-bg: $theme-bg;
+
+//nav组件（二级导航栏）
+$nav-color: $theme-sub-color;
+$nav-bg: $theme-bg;
+
+//loading组件
+$loading-color: #666;
+
+//slide组件（轮播）
+$slide-dot: #fff;
+$slide-dot-active: $theme;
+
+//进度条组件
+$mmProgress-bar: rgba(255, 255, 255, .15);
+$mmProgress-outer: rgba(255, 255, 255, .2);
+$mmProgress-dot-outer: $theme-sub-bg;
+$mmProgress-dot-inner: $theme-bg;
 
 //字体大小定义规范
 $font-size-small-ss: 30px;

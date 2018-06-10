@@ -1,3 +1,5 @@
+@import "~assets/css/var.scss";
+
 .dots {
   position: absolute;
   right: 0;
@@ -6,17 +8,16 @@
   transform: translateZ(1px);
   text-align: center;
   font-size: 0;
-  
+
   .dot {
     display: inline-block;
     margin: 0 10px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #fff;
-  }
-  
-  .dot.on {
-    background: #d43c33;
+    background-color: $slide-dot;
+    &.on {
+      background-color: $slide-dot-active;
+    }
   }
 }

@@ -3,9 +3,7 @@
 
 .mm-header {
   position: relative;
-  height: 160px;
-  overflow: hidden;
-  background-color: $theme-bg-color;
+  background-color: $header-bg;
   .mm-header-left {
     position: absolute;
     top: 45px;
@@ -23,19 +21,19 @@
       flex: 0 0 33.333333%;;
       height: 70px;
       @include bg-full($s: cover);
-      &.music{
+      &.music {
         background-image: url("t_actionbar_music_normal.png");
         &.active {
           background-image: url("t_actionbar_music_selected.png");
         }
       }
-      &.discover{
+      &.discover {
         background-image: url("t_actionbar_discover_normal.png");
         &.active {
           background-image: url("t_actionbar_discover_selected.png");
         }
       }
-      &.video{
+      &.video {
         background-image: url("t_actionbar_video_normal.png");
         &.active {
           background-image: url("t_actionbar_video_selected.png");

@@ -6,10 +6,10 @@
   height: 120px;
   padding: 20px 170px;
   line-height: 120px;
-  color: #fff;
-  background-color: $theme-bg-color;
+  color: $nav-color;
+  background-color: $nav-bg;
   overflow: hidden;
-  & &-left {
+  &-left {
     position: absolute;
     top: 44px;
     left: 44px;
@@ -20,13 +20,13 @@
     @include bg-url("~assets/img/oq.png");
     @include bg-full;
   }
-  & &-title {
+  &-title {
     position: relative;
     z-index: 1;
     width: 100%;
     font-size: $font-size-medium-x;
   }
-  & &-right {
+  &-right {
     position: absolute;
     right: 0;
     z-index: 1;

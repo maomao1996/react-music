@@ -44,12 +44,7 @@ class Scroll extends Component {
   
   componentWillUnmount() {
     this.scroll.destroy();
-    if (this.props.options.pullDownRefresh) {
-      this.scroll.off('pullingDown', this.onPullingDown)
-    }
-    if (this.props.options.pullUpLoad) {
-      this.scroll.off('pullingUp', this.onPullingUp)
-    }
+    clearTimeout(this.refreshTimer)
   }
   
   // 初始化
@@ -69,7 +64,8 @@ class Scroll extends Component {
   
   // 重新计算
   refresh() {
-    setTimeout(() => {
+    clearTimeout(this.refreshTimer);
+    this.refreshTimer = setTimeout(() => {
       this.forceUpdate(true)
     }, this.props.refreshDelay)
   }

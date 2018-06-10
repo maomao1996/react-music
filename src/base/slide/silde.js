@@ -43,19 +43,22 @@ class Slide extends Component {
     }
   }
   
+  componentWillUnmount() {
+    this.slide && this.slide.destroy() //销毁 better-scroll
+  }
+  
   //重新计算 better-scroll
   refresh() {
     if (this.slide === null) {
       return false
     }
-    if (this.slider) {
-      this.slider.refresh()
-    }
+    this.slide && this.slide.refresh()
   }
   
   //初始化 better-scroll
   _initSlide() {
-    this.slider = new BScroll(ReactDOM.findDOMNode(this.refs.sildeWrapper), {
+    const slideEle = ReactDOM.findDOMNode(this.refs.sildeWrapper);
+    this.slide = new BScroll(slideEle, {
       scrollX: true,
       scrollY: false,
       momentum: false,
@@ -68,17 +71,21 @@ class Slide extends Component {
       stopPropagation: true
     });
     
-    this.slider.goToPage(this.state.currentPageIndex, 0, 0);
+    this.slide.goToPage(this.state.currentPageIndex, 0, 0);
     
-    this.slider.on('scrollEnd', this._onScrollEnd);
+    // 绑定滚动结束事件
+    this.slide.on('scrollEnd', this._onScrollEnd);
     
-    this.slider.on('touchend', () => {
+    slideEle.removeEventListener('touchend', this._touchEndEvent, false);
+    this._touchEndEvent = () => {
       if (this.props.autoPlay) {
         this._play()
       }
-    });
+    };
+    slideEle.addEventListener('touchend', this._touchEndEvent, false);
     
-    this.slider.on('beforeScrollStart', () => {
+    // 绑定滚动开始前事件
+    this.slide.on('beforeScrollStart', () => {
       if (this.props.autoPlay) {
         clearTimeout(this.timer)
       }
@@ -107,13 +114,13 @@ class Slide extends Component {
   _play = () => {
     clearTimeout(this.timer);
     this.timer = setTimeout(() => {
-      this.slider.next()
+      this.slide && this.slide.next()
     }, this.props.interval)
   };
   
   //滚动结束事件
   _onScrollEnd = () => {
-    let pageIndex = this.slider.getCurrentPage().pageX;
+    let pageIndex = this.slide.getCurrentPage().pageX;
     this.setState({
       currentPageIndex: pageIndex
     });
@@ -128,13 +135,11 @@ class Slide extends Component {
       <div className="silde-wrapper" ref="sildeWrapper">
         <div className="slide-group" ref="sildeList">
           {
-            data && data.length > 0 && data.map((item, index) => {
-              return (
-                <div className="slide-item" key={item.targetId + index}>
-                  <img src={item.picUrl} alt=""/>
-                </div>
-              )
-            })
+            data && data.length > 0 && data.map((item, index) => <div
+              className="slide-item"
+              key={item.targetId + index}>
+              <img src={item.picUrl} alt=""/>
+            </div>)
           }
         </div>
         <Dot data={data} currentIndex={this.state.currentPageIndex}/>

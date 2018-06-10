@@ -94,7 +94,21 @@
       bottom: 20px;
       height: 320px;
       .progress-wrapper {
-        height: 68px;
+        display: flex;
+        height: 20Px;
+        padding: 8px 50px 0;
+        .progress-time {
+          width: 120px;
+          line-height: 20Px;
+          font-size: $font-size-small-ss;
+          color: #fff;
+          &.progress-time-l {
+            text-align: left;
+          }
+          &.progress-time-r {
+            text-align: right;
+          }
+        }
       }
       .btn-wrapper {
         display: flex;

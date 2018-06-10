@@ -6,8 +6,10 @@ import {connect} from 'react-redux'
 
 import Cd from './cd/cd'
 import MusicList from './music-list/music-list'
+import Progress from 'base/progress/progress'
 
 import {setShowPlayer, setCurrentMusic, setCurrentIndex, setPlayList} from "store/actions"
+import {formatTime} from 'common/util'
 
 import './player.scss'
 
@@ -17,9 +19,10 @@ class Player extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isFull: false,
-      isPlay: false,
-      showMusicList: false,
+      isFull: false, // 是否全屏显示Player
+      isPlay: false, // 是否播放
+      showMusicList: false, // 是否显示播放列表
+      currentTime: 0, // 当前播放时间
       currentMusic: {
         id: 368727,
         name: "明天，你好",
@@ -36,20 +39,44 @@ class Player extends Component {
     this.mmPlayer = ReactDOM.findDOMNode(this.refs.mmPlayer);
     this.audioEle = ReactDOM.findDOMNode(this.refs.audioEle);
     this.audioEle.load();
-    this.audioEle.addEventListener("canplay", () => {
-      clearTimeout(this.timer);
-      this.timer = setTimeout(() => {
-        this.audioEle.play();
-        this.setState({
-          isPlay: true
-        })
-      }, 0)
-    }, false);
-    
-    this.audioEle.addEventListener("ended", () => {
-      this.next()
-    }, false);
+    this.bindEvents()
   }
+  
+  componentWillUnmount() {
+    this.unbindEvents()
+  }
+  
+  //添加绑定事件
+  bindEvents() {
+    this.audioEle.addEventListener('canplay', this.readyPlay);
+    this.audioEle.addEventListener('ended', this.next);
+    this.audioEle.addEventListener('timeupdate', this.timeUpdate)
+  }
+  
+  //移除绑定事件
+  unbindEvents() {
+    this.audioEle.removeEventListener('canplay', this.readyPlay);
+    this.audioEle.removeEventListener('ended', this.next);
+    this.audioEle.removeEventListener('timeupdate', this.timeUpdate)
+  }
+  
+  // 开始播放事件
+  readyPlay = () => {
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      this.audioEle.play();
+      this.setState({
+        isPlay: true
+      })
+    }, 0)
+  };
+  
+  // 播放时间改变
+  timeUpdate = () => {
+    this.setState({
+      currentTime: this.audioEle.currentTime
+    });
+  };
   
   // 上一曲
   prev = () => {
@@ -76,8 +103,7 @@ class Player extends Component {
         isPlay: true
       })
     }
-    e.stopPropagation();
-    e.nativeEvent.stopImmediatePropagation()
+    e.stopPropagation()
   };
   
   // 下一曲
@@ -90,12 +116,18 @@ class Player extends Component {
     this.props.setCurrentIndex(index)
   };
   
+  // 进度条改变
+  progressEnd = value => {
+    this.audioEle.currentTime = value * this.props.currentMusic.duration;
+  };
+  
+  // 切换播放列表显示
   toggleShow = (e, showMusicList = true) => {
     this.setState({showMusicList});
     e.stopPropagation();
-    e.nativeEvent.stopImmediatePropagation()
   };
   
+  // 选中播放事件
   selectPlay(id, index) {
     if (id !== this.props.currentMusic.id) {
       this.props.setCurrentMusic(this.props.playList[index]);
@@ -121,7 +153,7 @@ class Player extends Component {
   }
   
   render() {
-    const {isFull, isPlay, showMusicList} = this.state;
+    const {isFull, isPlay, showMusicList, currentTime} = this.state;
     const {currentMusic, playList} = this.props;
     return (
       <div className="player">
@@ -146,13 +178,17 @@ class Player extends Component {
             <Cd isPlay={isPlay} image={currentMusic.image}/>
           </div>
           <div className="footer">
-            <div className="progress-wrapper"/>
+            <div className="progress-wrapper">
+              <span className="progress-time progress-time-l">{formatTime(currentTime)}</span>
+              <Progress percent={currentTime / currentMusic.duration} dragEnd={this.progressEnd}/>
+              <span className="progress-time progress-time-r">{formatTime(currentMusic.duration)}</span>
+            </div>
             <div className="btn-wrapper">
               {/*<div className="btn btn-mode mode-list"/>*/}
               <div className="btn btn-prev" onClick={this.prev}/>
               <div className={classNames('btn btn-play', {'btn-pause': !isPlay})} onClick={this.play}/>
               <div className="btn btn-next" onClick={this.next}/>
-              {/*<div className="btn btn-list"/>*/}
+              <div className="btn btn-list" onClick={this.toggleShow}/>
             </div>
           </div>
         </div>
@@ -169,9 +205,13 @@ class Player extends Component {
           <div className="player-min-list" onClick={this.toggleShow}/>
         </div>
         <audio ref="audioEle" src={`https://music.163.com/song/media/outer/url?id=${currentMusic.id}.mp3`}/>
-        <MusicList show={showMusicList} toggleShow={this.toggleShow} list={playList} music={currentMusic}
-                   onItemClick={(id, index) => this.selectPlay(id, index)}
-                   deleteClick={(id, index) => this.deleteClick(id, index)}/>
+        <MusicList
+          show={showMusicList}
+          toggleShow={this.toggleShow}
+          list={playList}
+          music={currentMusic}
+          onItemClick={(id, index) => this.selectPlay(id, index)}
+          deleteClick={(id, index) => this.deleteClick(id, index)}/>
       </div>
     )
   }
