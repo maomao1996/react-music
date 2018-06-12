@@ -16,7 +16,7 @@
       right: 0;
       bottom: 50px;
       left: 0;
-      background-color: $theme-bg-color;
+      background-color: $theme-bg;
     }
   }
   & .menu {
@@ -64,7 +64,7 @@
           top: 60%;
           left: 50%;
           font-size: $font-size-small;
-          color: #d33a31;
+          color: $theme-color;
           transform: translate(-50%, -50%);
         }
       }
@@ -73,7 +73,7 @@
           @include bg-url("~assets/img/discover/icn_daily_prs.png")
         }
         &:after {
-          color: #fff;
+          color: $theme-sub-color;
         }
       }
       &.playlist:before {

@@ -3,22 +3,26 @@ import PropTypes from 'prop-types'
 
 import {formatPlayCount} from 'common/util'
 
-import './sheetlist.scss'
+import './columnList.scss'
 
-// 歌曲基础列表组件
+// 歌曲基础列表组件——列
 
-const BaseSheetList = (props) => {
+const ColumnList = (props) => {
   const {list, onItemClick} = props;
   return (
-    <div className="sheetlist-wrapper">
+    <div className="column-wrapper">
       {
         list.length > 0 && list.map(item => {
           return (
-            <div className="sheetlist-item" onClick={() => onItemClick(item.id)} key={item.id}>
-              <div className="sheetlist-img" data-play={formatPlayCount(item.playCount)}>
+            <div
+              className="column-item"
+              onClick={() => onItemClick(item.id)}
+              key={item.id}
+            >
+              <div className="column-img" data-play={formatPlayCount(item.playCount)}>
                 <img width="100%" height="100%" src={`${item.coverImgUrl}?param=200y200`} alt=""/>
               </div>
-              <p className="sheetlist-title">{item.name.replace(/\s/g, ' ')}</p>
+              <p className="column-title">{item.name.replace(/\s/g, ' ')}</p>
             </div>
           )
         })
@@ -27,9 +31,9 @@ const BaseSheetList = (props) => {
   )
 };
 
-BaseSheetList.propTypes = {
+ColumnList.propTypes = {
   list: PropTypes.any.isRequired,
   onItemClick: PropTypes.func.isRequired
 };
 
-export default BaseSheetList
+export default ColumnList

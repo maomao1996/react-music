@@ -2,7 +2,7 @@
 @import "~assets/css/var.scss";
 
 .song-wrapper {
-  & .song-item {
+  .song-item {
     display: flex;
     padding-left: 20px;
     .song-num {
@@ -16,31 +16,35 @@
       flex: 1;
       min-width: 0;
       padding: 25px 15px 25px 0;
-      border-bottom: 1px solid #eee;
+      &:not(:last-child) {
+        border-bottom: 1px solid $songList-line;
+      }
       h2 {
         height: 50px;
         margin-bottom: 20px;
         line-height: 50px;
         font-size: 46px;
-        color: #333;
+        color: $songist-title-color;
         @include no-wrap;
       }
       p {
         height: 50px;
         line-height: 50px;
         font-size: 34px;
-        color: #777;
-        @include no-wrap;
-        span {
-          color: #507daf;
-        }
+        color: $songist-desc-color;
+        @include no-wrap
       }
-    }
-    &:nth-last-of-type(1) .song-info {
-      border: 0;
     }
     .song-btn {
 
+    }
+    &.active {
+      .song-num {
+        color: $theme-color;
+      }
+      h2, p {
+        color: $theme-color;
+      }
     }
   }
 }

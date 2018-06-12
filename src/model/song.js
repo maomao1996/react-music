@@ -11,14 +11,14 @@ function filterSinger(singers) {
 }
 
 export class Song {
-  constructor({id, name, singer, album, image, duration, url}) {
+  constructor({id, name, singer, album, image, duration}) {
     this.id = id; //歌曲ID
     this.name = name; //歌曲名称
     this.singer = singer; //歌手
     this.album = album; //专辑
     this.image = image; //封面图
     this.duration = duration; //时长
-    this.url = url //URL地址
+    // this.url = url //URL地址
   }
 }
 
@@ -30,7 +30,7 @@ export function createSongs(music) {
     album: music.album.name,
     image: music.album.picUrl || null,
     duration: music.duration / 1000,
-    url: `https://music.163.com/song/media/outer/url?id=${music.id}.mp3`
+    // url: `https://music.163.com/song/media/outer/url?id=${music.id}.mp3`
   })
 }
 
@@ -42,7 +42,7 @@ export function createTopList(music) {
     album: music.al.name,
     image: music.al.picUrl,
     duration: music.dt / 1000,
-    url: `https://music.163.com/song/media/outer/url?id=${music.id}.mp3`
+    // url: `https://music.163.com/song/media/outer/url?id=${music.id}.mp3`
   })
 }
 

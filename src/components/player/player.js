@@ -128,15 +128,15 @@ class Player extends Component {
   };
   
   // 选中播放事件
-  selectPlay(id, index) {
+  selectPlay = (id, index) => {
     if (id !== this.props.currentMusic.id) {
       this.props.setCurrentMusic(this.props.playList[index]);
       this.props.setCurrentIndex(index)
     }
-  }
+  };
   
   // 删除事件
-  deleteClick(id, index) {
+  deleteClick = (id, index) => {
     let list = [...this.props.playList], currentIndex = this.props.currentIndex;
     list.splice(index, 1);
     // 当播放列表没有歌曲时
@@ -150,7 +150,7 @@ class Player extends Component {
     }
     this.props.setCurrentMusic(list[currentIndex] || {});
     this.props.setPlayList(list);
-  }
+  };
   
   render() {
     const {isFull, isPlay, showMusicList, currentTime} = this.state;
@@ -207,11 +207,12 @@ class Player extends Component {
         <audio ref="audioEle" src={`https://music.163.com/song/media/outer/url?id=${currentMusic.id}.mp3`}/>
         <MusicList
           show={showMusicList}
-          toggleShow={this.toggleShow}
+          onMaskClick={this.toggleShow}
           list={playList}
           music={currentMusic}
-          onItemClick={(id, index) => this.selectPlay(id, index)}
-          deleteClick={(id, index) => this.deleteClick(id, index)}/>
+          onItemClick={this.selectPlay}
+          deleteClick={this.deleteClick}
+        />
       </div>
     )
   }

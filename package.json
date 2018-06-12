@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "better-scroll": "^1.9.1",
+    "better-scroll": "^1.12.1",
     "classnames": "^2.2.5",
     "fastclick": "^1.0.6",
     "prop-types": "^15.6.1",

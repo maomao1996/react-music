@@ -15,7 +15,7 @@ const MmHeader = (props) => {
   };
   return (
     showHeader && <header className="mm-header">
-      <div className="mm-header-left" onClick={open}/>
+      {/*<div className="mm-header-left" onClick={open}/>*/}
       <div className="mm-header-title">
         {/*<NavLink className="mm-header-item music" to="/music"/>*/}
         <NavLink className="mm-header-item discover" to="/discover"/>

@@ -41,7 +41,7 @@ class PlayList extends Component {
     })
   }
   
-  onItemClick(id, index) {
+  onItemClick = (id, index) => {
     // console.log(id, index);
     // console.log(this.state.data.tracks[index]);
     this.props.setAllPlay({
@@ -55,6 +55,7 @@ class PlayList extends Component {
   }
   
   render() {
+    const {currentMusic} = this.props;
     const {defaultName, loading} = this.state;
     const {name, coverImgUrl, avatarUrl, nickname, playCount, tracks} = this.state.data;
     return (
@@ -62,7 +63,10 @@ class PlayList extends Component {
         <MmNav title={name ? name : defaultName} navType="fixed"/>
         {
           coverImgUrl && <div className="mm-blur mm-blur-min">
-            <div className="mm-blur-bg" style={{backgroundImage: `url(${coverImgUrl}?param=100y100)`}}/>
+            <div
+              className="mm-blur-bg"
+              style={{backgroundImage: `url(${coverImgUrl}?param=100y100)`}}
+            />
           </div>
         }
         {
@@ -70,7 +74,10 @@ class PlayList extends Component {
             : <Scroll className="mm-content">
               <header className="playlist-header">
                 <div className="mm-blur">
-                  <div className="mm-blur-bg" style={{backgroundImage: `url(${coverImgUrl}?param=100y100)`}}/>
+                  <div
+                    className="mm-blur-bg"
+                    style={{backgroundImage: `url(${coverImgUrl}?param=100y100)`}}
+                  />
                 </div>
                 <div className="playlist-header-wrapper">
                   <div className="playlist-header-hd" data-play={formatPlayCount(playCount)}>
@@ -87,7 +94,12 @@ class PlayList extends Component {
               </header>
               {
                 tracks && tracks.length > 0 &&
-                <BaseSongList showRank list={tracks} onItemClick={(id, index) => this.onItemClick(id, index)}/>
+                <BaseSongList
+                  showRank
+                  list={tracks}
+                  onItemClick={this.onItemClick}
+                  activeId={currentMusic.id}
+                />
               }
             </Scroll>
         }
@@ -98,7 +110,8 @@ class PlayList extends Component {
 
 //映射Redux全局的state到组件的props上
 const mapStateToProps = state => ({
-  showPlayer: state.showPlayer
+  showPlayer: state.showPlayer,
+  currentMusic: state.currentMusic
 });
 
 //映射dispatch到props上

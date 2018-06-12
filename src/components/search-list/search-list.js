@@ -4,10 +4,10 @@ import classNames from 'classnames'
 import {connect} from 'react-redux'
 
 import BaseSongList from 'base/songlist/songlist'
-import BasePlayList from 'base/playlist/playlist'
+import RowList from 'base/rowList/rowList'
 import Loading from 'base/loading/loading'
 
-import {setAllPlay, addPlay} from 'store/actions'
+import {addPlay} from 'store/actions'
 import {search, getMusicDetail} from 'api'
 import {HTTP_OK} from 'common/config'
 import formatSongs from 'model/song'
@@ -52,7 +52,7 @@ class SearchList extends Component {
   }
   
   // 播放单曲
-  addPlay(id, index) {
+  addPlay = (id, index) => {
     getMusicDetail(id)
     .then(res => {
       if (res.data.code === HTTP_OK) {
@@ -61,12 +61,12 @@ class SearchList extends Component {
         this.props.addPlay(music);
       }
     })
-  }
+  };
   
   // 跳转歌单
-  openPlayList(id) {
+  openPlayList = id => {
     this.props.history.push({pathname: `/playlist/${id}`})
-  }
+  };
   
   //切换Tab
   toggleTab = (type) => {
@@ -105,6 +105,7 @@ class SearchList extends Component {
   };
   
   render() {
+    const {currentMusic} = this.props;
     const {tabData, type, songs, playlists, loading} = this.state;
     const {query} = this.props;
     return (
@@ -124,14 +125,21 @@ class SearchList extends Component {
             {
               loading ? <Loading/>
                 : songs.length > 0 &&
-                <BaseSongList list={songs} onItemClick={(id, index) => this.addPlay(id, index)}/>
+                <BaseSongList
+                  list={songs}
+                  onItemClick={this.addPlay}
+                  activeId={currentMusic.id}
+                />
             }
           </div>
           <div className={classNames('search-content-item', {active: type === 1000})}>
             {
               loading ? <Loading/>
                 : playlists.length > 0 &&
-                <BasePlayList list={playlists} onItemClick={id => this.openPlayList(id)}/>
+                <RowList
+                  list={playlists}
+                  onItemClick={this.openPlayList}
+                />
             }
           </div>
         </div>

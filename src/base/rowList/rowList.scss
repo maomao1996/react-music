@@ -1,40 +1,41 @@
 @import "~assets/css/mixin.scss";
 @import "~assets/css/var.scss";
 
-.playlist-wrapper {
-  & .playlist-item {
+$classPrefix: row;
+.#{$classPrefix}-wrapper {
+  .#{$classPrefix}-item {
     display: flex;
+    align-items: center;
     padding: 10px 0 10px 20px;
-    .playlist-hd {
+    &:not(:last-child) {
+      border-bottom: 1px solid $rowList-line;
+    }
+    .#{$classPrefix}-hd {
       width: 160px;
       height: 160px;
       margin-right: 30px;
       border-radius: 10px;
       overflow: hidden;
     }
-    .playlist-bd {
+    .#{$classPrefix}-bd {
       flex: 1;
       min-width: 0;
       padding: 25px 15px 25px 0;
-      border-bottom: 1px solid #eee;
       h2 {
         height: 50px;
         margin-bottom: 20px;
         line-height: 50px;
         font-size: 46px;
-        color: #333;
+        color: $rowList-title-color;
         @include no-wrap;
       }
       p {
         height: 50px;
         line-height: 50px;
         font-size: 34px;
-        color: #777;
+        color: $rowList-desc-color;
         @include no-wrap;
       }
-    }
-    &:nth-last-of-type(1) .playlist-bd {
-      border: 0;
     }
   }
 }

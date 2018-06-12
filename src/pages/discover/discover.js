@@ -4,12 +4,11 @@ import {Link} from "react-router-dom"
 import Slide from 'base/slide/silde'
 import Loading from 'base/loading/loading'
 import Scroll from 'base/scroll/scroll'
-import BaseSheetList from 'base/sheetlist/sheetlist'
+import ColumnList from 'base/columnList/columnList'
 
 import {getBanner, getPersonalized} from 'api'
 import {HTTP_OK} from 'common/config'
 import {formatPlayListMin} from 'model/playlist'
-
 
 import './discover.scss'
 
@@ -52,7 +51,9 @@ class Discover extends Component {
         {
           personalized.length > 0 && banners.length > 0 ?
             <Scroll className="Recommend" options={{bounce: false}}>
-              {this.state.banners && <div className="banner"><Slide ref="slide" data={this.state.banners}/></div>}
+              {this.state.banners && <div className="banner">
+                <Slide ref="slide" data={this.state.banners}/>
+              </div>}
               <div className="menu">
                 {/*<div className="menu-item">*/}
                 {/*<div className="menu-icon fm"/>*/}
@@ -75,7 +76,10 @@ class Discover extends Component {
                 <h3 className="lcrlist-hd" onClick={() => {
                   this.props.history.push('/sheetlist')
                 }}><span>推荐歌单</span></h3>
-                <BaseSheetList list={personalized} onItemClick={id => this.props.history.push(`/playlist/${id}`)}/>
+                <ColumnList
+                  list={personalized}
+                  onItemClick={id => this.props.history.push(`/playlist/${id}`)}
+                />
               </div>
             </Scroll>
             : <Loading/>

@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import Loading from 'base/loading/loading'
 import MmNav from 'components/mm-nav/mm-nav'
 import Scroll from 'base/scroll/scroll'
-import BaseSheetList from 'base/sheetlist/sheetlist'
+import ColumnList from 'base/columnList/columnList'
 
 import {getTopPlaylist} from 'api'
 import {HTTP_OK} from 'common/config'
@@ -63,7 +63,10 @@ class SheetList extends Component {
       <div className="sheetlist mm-wrapper">
         <MmNav/>
         <Scroll className="mm-content" options={options} pullUpLoad={this.pullUpLoad}>
-          <BaseSheetList list={data} onItemClick={id => this.props.history.push(`/playlist/${id}`)}/>
+          <ColumnList
+            list={data}
+            onItemClick={id => this.props.history.push(`/playlist/${id}`)}
+          />
           <Loading show={loading}/>
         </Scroll>
       </div>

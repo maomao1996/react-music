@@ -17,7 +17,6 @@ $theme-main-color: #f3f4f6;
 $theme-sub-bg: #fff;
 $theme-sub-color: #fff;
 
-$theme-bg-color: $theme; //后续将用$theme-bg取代
 
 //header组件（一级导航栏）
 $header-bg: $theme-bg;
@@ -38,6 +37,19 @@ $mmProgress-bar: rgba(255, 255, 255, .15);
 $mmProgress-outer: rgba(255, 255, 255, .2);
 $mmProgress-dot-outer: $theme-sub-bg;
 $mmProgress-dot-inner: $theme-bg;
+
+//歌单列表组件——行
+$rowList-title-color: #333;
+$rowList-desc-color: #777;
+$rowList-line: #ddd;
+
+//歌单列表组件——列
+$columnList-title-color: #333;
+
+//歌单详情列表
+$songist-title-color: #333;
+$songist-desc-color: #777;
+$songList-line: #ddd;
 
 //字体大小定义规范
 $font-size-small-ss: 30px;

@@ -7,10 +7,14 @@ import Scroll from 'base/scroll/scroll'
 import './music-list.scss'
 
 const MusicList = (props) => {
-  const {show, toggleShow, list, music, onItemClick, deleteClick} = props;
+  const {show, onMaskClick, list, music, onItemClick, deleteClick} = props;
+  const maskClick = (e) => {
+    onMaskClick(e, false);
+    e.stopPropagation();
+  };
   return (
     <div className={classNames('musicList', {active: show})}>
-      <div className="musicList-mask" onClick={e => toggleShow(e, false)}/>
+      <div className="musicList-mask" onClick={maskClick}/>
       <div className="musicList-wrapper mm-wrapper">
         <div className="musicList-header">
           当前歌曲数：{list.length}
@@ -35,7 +39,7 @@ const MusicList = (props) => {
 
 MusicList.propTypes = {
   show: PropTypes.bool.isRequired,
-  toggleShow: PropTypes.func.isRequired,
+  onMaskClick: PropTypes.func.isRequired,
   list: PropTypes.any.isRequired,
   music: PropTypes.object.isRequired,
   onItemClick: PropTypes.func.isRequired,
