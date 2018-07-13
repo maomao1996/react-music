@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import BScroll from 'better-scroll'
+
 import './scroll.css'
 
 const DEFAULT_OPTIONS = {
@@ -14,14 +15,6 @@ const DEFAULT_OPTIONS = {
 };
 
 class Scroll extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isPullingDown: false,// 是否锁定下拉事件
-      isPullUpLoad: false,// 是否锁定上拉事件
-    }
-  }
-  
   static propTypes = {
     className: PropTypes.string,
     options: PropTypes.object,
@@ -34,12 +27,31 @@ class Scroll extends Component {
     refreshDelay: 20
   };
   
+  constructor(props) {
+    super(props);
+    this.state = {
+      isPullingDown: false,// 是否锁定下拉事件
+      isPullUpLoad: false,// 是否锁定上拉事件
+    }
+  }
+  
   componentDidMount() {
     this.initScroll()
   }
   
-  componentDidUpdate() {
-    this.scroll && this.refresh()
+  shouldComponentUpdate(newProps, newState) {
+    // console.log("newProps", newProps.children && newProps.children[0].props.list.length);
+    // console.log("this", this.props.children && this.props.children[0].props.list.length);
+    if (this.scroll.options.pullDownRefresh || this.scroll.options.pullUpLoad) {
+      if (newProps.children[0].props.list.length > 0) {
+        let newList = newProps.children[0].props.list,
+          List = this.props.children[0].props.list;
+        if (newList.length !== List.length) {
+          this.refresh();
+        }
+      }
+    }
+    return true;
   }
   
   componentWillUnmount() {
