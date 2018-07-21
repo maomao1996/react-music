@@ -1,5 +1,5 @@
 //颜色定义规范
-$theme: #e5473c; // 网易红
+// $theme: #e5473c; // 网易红
 //$theme: #31c27c; // 企鹅绿
 //$theme: #0c8ed9; // 酷狗蓝
 //$theme: #f60; // 虾米橙
@@ -11,12 +11,11 @@ $theme: #e5473c; // 网易红
  *    bg为背景颜色
  * 若不带color或者bg后缀均为背景颜色（特殊说明除外）
  */
-$theme-color: $theme;
-$theme-bg: $theme;
+$theme-color: var(--THEME);
+$theme-bg: var(--THEME);
 $theme-main-color: #f3f4f6;
 $theme-sub-bg: #fff;
 $theme-sub-color: #fff;
-
 
 //header组件（一级导航栏）
 $header-bg: $theme-bg;
@@ -30,11 +29,11 @@ $loading-color: #666;
 
 //slide组件（轮播）
 $slide-dot: #fff;
-$slide-dot-active: $theme;
+$slide-dot-active: $theme-bg;
 
 //进度条组件
-$mmProgress-bar: rgba(255, 255, 255, .15);
-$mmProgress-outer: rgba(255, 255, 255, .2);
+$mmProgress-bar: rgba(255, 255, 255, 0.15);
+$mmProgress-outer: rgba(255, 255, 255, 0.2);
 $mmProgress-dot-outer: $theme-sub-bg;
 $mmProgress-dot-inner: $theme-bg;
 
