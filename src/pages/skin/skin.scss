@@ -1,0 +1,19 @@
+@import '~assets/css/mixin.scss';
+
+.skin {
+	.mm-content {
+		display: flex;
+		flex-flow: wrap;
+		justify-content: space-between;
+		@include scroll;
+		padding-top: 4vw;
+	}
+	&-item {
+		flex: 0 0 48vw;
+		height: 48vw;
+		margin-bottom: 4vw;
+		text-align: center;
+		line-height: 48vw;
+		color: #fff;
+	}
+}

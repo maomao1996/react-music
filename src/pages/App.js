@@ -13,6 +13,7 @@ const Search = asyncComponent(() => import('pages/search/search'))
 const TopList = asyncComponent(() => import('pages/toplist/toplist'))
 const PlayList = asyncComponent(() => import('pages/playlist/playlist'))
 const SheetList = asyncComponent(() => import('pages/sheetlist/sheetlist'))
+const Skin = asyncComponent(() => import('pages/skin/skin'))
 
 class App extends Component {
 	constructor(props) {
@@ -45,6 +46,7 @@ class App extends Component {
 							<Route path="/toplist" component={TopList} />
 							<Route path="/playlist/:id" component={PlayList} />
 							<Route path="/sheetlist" component={SheetList} />
+							<Route path="/skin" component={Skin} />
 							<Redirect to="/discover" />
 						</Switch>
 					</main>
