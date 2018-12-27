@@ -138,7 +138,7 @@ class Slide extends Component {
             data && data.length > 0 && data.map((item, index) => <div
               className="slide-item"
               key={item.targetId + index}>
-              <img src={item.picUrl} alt=""/>
+              <img src={item.imageUrl} alt=""/>
             </div>)
           }
         </div>

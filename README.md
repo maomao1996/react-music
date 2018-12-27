@@ -1,14 +1,12 @@
-# React-Music（2018.07.24）发布 1.1.0 版
+# React-Music（2018.12.27）
 
-> API：一个开源的[网易云音乐 NodeJS 版 API](https://binaryify.github.io/NeteaseCloudMusicApi)（有api才有动力写！！！）
+> API：一个开源的[网易云音乐 NodeJS 版 API](https://binaryify.github.io/NeteaseCloudMusicApi)（有 api 才有动力写！！！）
 
 > [在线演示地址](http://reactmusic.mtnhao.com)
 
-> [桌面版下载](http://cdn.mtnhao.com/mmPlayer.zip)
-
 > [Vue PC/移动端二合一版本](https://github.com/maomao1996/Vue-mmPlayer)
 
-> [交流QQ群：529940193](http://shang.qq.com/wpa/qunwpa?idkey=f8be1b627a89108ccfda9308720d2a4d0eb3306f253c5d3e8d58452e20b91129)
+> [交流 QQ 群：529940193](http://shang.qq.com/wpa/qunwpa?idkey=f8be1b627a89108ccfda9308720d2a4d0eb3306f253c5d3e8d58452e20b91129)
 
 ## 如何安装与使用
 
@@ -34,22 +32,23 @@ yarn //安装依赖
 node app.js //服务端运行 访问 http://localhost:3000
 ```
 
-#### 运行react-music后无法获取音乐请检查后台服务器是否启动
-#### common/config.js的url地址要和后台服务器地址一致
+#### 运行 react-music 后无法获取音乐请检查后台服务器是否启动
+
+#### common/config.js 的 url 地址要和后台服务器地址一致
 
 ## 技术栈
 
-- React（核心框架）
-- React-Router（页面路由）
-- Redux（状态管理）
-- React-Redux
-- Redux-Thunk
-- ES 6 / 7（JavaScript 语言的下一代标准）
-- Sass（CSS预处理器）
-- Axios（网络请求）
-- ClassNames（处理动态 clss ）
-- [Better-Scroll](https://ustbhuangyi.github.io/better-scroll/#/zh)（一款重点解决移动端各种滚动场景需求的插件）
-- FastClick（解决移动端300ms点击延迟）
+-   React（核心框架）
+-   React-Router（页面路由）
+-   Redux（状态管理）
+-   React-Redux
+-   Redux-Thunk
+-   ES 6 / 7（JavaScript 语言的下一代标准）
+-   Sass（CSS 预处理器）
+-   Axios（网络请求）
+-   ClassNames（处理动态 clss ）
+-   [Better-Scroll](https://ustbhuangyi.github.io/better-scroll/#/zh)（一款重点解决移动端各种滚动场景需求的插件）
+-   FastClick（解决移动端 300ms 点击延迟）
 
 ## 项目布局
 
@@ -154,31 +153,36 @@ node app.js //服务端运行 访问 http://localhost:3000
 
 ## 功能
 
-- 播放器
-- 正在播放
-- 排行榜
-- 歌单列表
-- 歌单详情
-- 搜索（歌曲、歌单）
-- 皮肤切换
+-   播放器
+-   正在播放
+-   排行榜
+-   歌单列表
+-   歌单详情
+-   搜索（歌曲、歌单）
+-   皮肤切换
 
 ## 更新说明
 
-###  V1.1.0（2018.07.24）发布正式版
+### V1.1.1（2018.12.27）
 
-- 制作皮肤切换功能
-- 增加 Toast 弹出层
-- 优化 Scroll 组件逻辑
-- 优化抽屉组件样式
+-   修复 Banner 图片不显示问题
+-   修复歌单详情打开失败问题
 
-###  V1.0.0（2018.06.12）发布正式版
+### V1.1.0（2018.07.24）
 
-- 制作播放器功能
-- 制作正在播放列表功能
-- 制作排行榜功能
-- 制作歌单列表功能
-- 制作歌单详情功能
-- 制作搜索功能（歌曲、歌单）
+-   制作皮肤切换功能
+-   增加 Toast 弹出层
+-   优化 Scroll 组件逻辑
+-   优化抽屉组件样式
+
+### V1.0.0（2018.06.12）发布正式版
+
+-   制作播放器功能
+-   制作正在播放列表功能
+-   制作排行榜功能
+-   制作歌单列表功能
+-   制作歌单详情功能
+-   制作搜索功能（歌曲、歌单）
 
 ## License
 
