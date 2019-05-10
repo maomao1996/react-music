@@ -2,33 +2,33 @@
 @import '~assets/css/mixin.scss';
 
 .drawer-sidebar .menu {
-	height: 100%;
-	@include scroll;
-	&-title {
-		height: 480px;
-		text-align: center;
-		line-height: 480px;
-		background-color: $theme-bg;
-		opacity: 0.8;
-		@include bg-url('~assets/img/menu/aip.png');
-		@include bg-full;
-	}
+  height: 100%;
+  @include scroll;
+  &-title {
+    height: 480px;
+    text-align: center;
+    line-height: 480px;
+    background-color: $theme-bg;
+    opacity: 0.8;
+    @include bg-url('~assets/img/menu/aip.png');
+    @include bg-full;
+  }
 
-	&-item {
-		display: flex;
-		height: 100px;
-		padding: 30px;
-		border-bottom: 1px solid #ededed;
-		line-height: 100px;
-		p {
-			flex: 1;
-		}
-		span {
-			display: block;
-			width: 60px;
-			height: 100px;
-			@include bg-url('~assets/img/aa7.png');
-			@include bg-full($s:30px,$p: center right);
-		}
-	}
+  &-item {
+    display: flex;
+    height: 100px;
+    padding: 30px;
+    border-bottom: 1px solid #ededed;
+    line-height: 100px;
+    p {
+      flex: 1;
+    }
+    span {
+      display: block;
+      width: 60px;
+      height: 100px;
+      @include bg-url('~assets/img/aa7.png');
+      @include bg-full($s: 30px, $p: center right);
+    }
+  }
 }

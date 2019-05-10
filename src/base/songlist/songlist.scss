@@ -1,5 +1,5 @@
-@import "~assets/css/mixin.scss";
-@import "~assets/css/var.scss";
+@import '~assets/css/mixin.scss';
+@import '~assets/css/var.scss';
 
 .song-wrapper {
   .song-item {
@@ -32,17 +32,17 @@
         line-height: 50px;
         font-size: 34px;
         color: $songist-desc-color;
-        @include no-wrap
+        @include no-wrap;
       }
     }
     .song-btn {
-
     }
     &.active {
       .song-num {
         color: $theme-color;
       }
-      h2, p {
+      h2,
+      p {
         color: $theme-color;
       }
     }

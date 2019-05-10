@@ -1,6 +1,6 @@
-@import "~assets/css/var.scss";
-@import "~assets/css/mixin.scss";
-@import "~assets/css/playCount.scss";
+@import '~assets/css/var.scss';
+@import '~assets/css/mixin.scss';
+@import '~assets/css/playCount.scss';
 
 $classPrefix: column;
 .#{$classPrefix}-wrapper {
@@ -23,7 +23,7 @@ $classPrefix: column;
         position: absolute;
         top: 0;
         left: 0;
-        @include img-full
+        @include img-full;
       }
     }
     .#{$classPrefix}-title {

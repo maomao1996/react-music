@@ -1,5 +1,5 @@
-@import "~assets/css/mixin.scss";
-@import "~assets/css/var.scss";
+@import '~assets/css/mixin.scss';
+@import '~assets/css/var.scss';
 
 .mm-header {
   position: relative;
@@ -10,7 +10,7 @@
     left: 40px;
     width: 70px;
     height: 70px;
-    background-image: url("ov.png");
+    background-image: url('ov.png');
     @include bg-full;
   }
   .mm-header-title {
@@ -18,25 +18,25 @@
     justify-content: center;
     padding: 45px 290px;
     .mm-header-item {
-      flex: 0 0 33.333333%;;
+      flex: 0 0 33.333333%;
       height: 70px;
       @include bg-full($s: cover);
       &.music {
-        background-image: url("t_actionbar_music_normal.png");
+        background-image: url('t_actionbar_music_normal.png');
         &.active {
-          background-image: url("t_actionbar_music_selected.png");
+          background-image: url('t_actionbar_music_selected.png');
         }
       }
       &.discover {
-        background-image: url("t_actionbar_discover_normal.png");
+        background-image: url('t_actionbar_discover_normal.png');
         &.active {
-          background-image: url("t_actionbar_discover_selected.png");
+          background-image: url('t_actionbar_discover_selected.png');
         }
       }
       &.video {
-        background-image: url("t_actionbar_video_normal.png");
+        background-image: url('t_actionbar_video_normal.png');
         &.active {
-          background-image: url("t_actionbar_video_selected.png");
+          background-image: url('t_actionbar_video_selected.png');
         }
       }
     }
@@ -47,7 +47,7 @@
     right: 33px;
     width: 70px;
     height: 70px;
-    background-image: url("pf.png");
+    background-image: url('pf.png');
     @include bg-full;
   }
 }

@@ -1,5 +1,5 @@
-@import "~assets/css/mixin.scss";
-@import "~assets/css/var.scss";
+@import '~assets/css/mixin.scss';
+@import '~assets/css/var.scss';
 
 .search {
   & &-head {
@@ -14,11 +14,11 @@
       display: block;
       width: 72px;
       height: 72px;
-      @include bg-url("~assets/img/oq.png");
+      @include bg-url('~assets/img/oq.png');
       @include bg-full;
     }
     .search-head-box {
-      border-bottom: 1px solid rgba(255, 255, 255, .6);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6);
       padding: 25px 0;
     }
     .search-head-input {
@@ -28,10 +28,10 @@
       line-height: 60px;
       outline: 0;
       font-size: 50px;
-      color: rgba(255, 255, 255, .9);
+      color: rgba(255, 255, 255, 0.9);
       background-color: transparent;
-      &::-webkit-input-placeholder{
-        color: rgba(255, 255, 255, .6);
+      &::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.6);
       }
     }
   }

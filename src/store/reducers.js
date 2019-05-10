@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux'
+import { combineReducers } from 'redux'
 import * as ActionTypes from './actionTypes'
 
 // 初始数据
@@ -6,16 +6,16 @@ const initialState = {
   showPlayer: false, //Player显示状态
   playList: [], //播放列表
   currentIndex: -1, //当前音乐索引
-  currentMusic: {}, //当前音乐
-};
+  currentMusic: {} //当前音乐
+}
 
 // 是否显示Player组件
 function showPlayer(showPlayer = initialState.showPlayer, action) {
   switch (action.type) {
     case ActionTypes.SET_SHOW_PLAYER:
-      return action.showPlayer;
+      return action.showPlayer
     default:
-      return showPlayer;
+      return showPlayer
   }
 }
 
@@ -23,9 +23,9 @@ function showPlayer(showPlayer = initialState.showPlayer, action) {
 function currentMusic(currentMusic = initialState.currentMusic, action) {
   switch (action.type) {
     case ActionTypes.SET_CURRENTMUSIC:
-      return action.currentMusic;
+      return action.currentMusic
     default:
-      return currentMusic;
+      return currentMusic
   }
 }
 
@@ -33,9 +33,9 @@ function currentMusic(currentMusic = initialState.currentMusic, action) {
 function currentIndex(currentIndex = initialState.currentIndex, action) {
   switch (action.type) {
     case ActionTypes.SET_CURRENTINDEX:
-      return action.currentIndex;
+      return action.currentIndex
     default:
-      return currentIndex;
+      return currentIndex
   }
 }
 
@@ -43,9 +43,9 @@ function currentIndex(currentIndex = initialState.currentIndex, action) {
 function playList(playList = initialState.playList, action) {
   switch (action.type) {
     case ActionTypes.SET_PLAYLIST:
-      return action.playList;
+      return action.playList
     default:
-      return playList;
+      return playList
   }
 }
 
@@ -54,6 +54,6 @@ const reducer = combineReducers({
   currentMusic,
   currentIndex,
   playList
-});
+})
 
 export default reducer

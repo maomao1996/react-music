@@ -1,4 +1,4 @@
-@import "~assets/css/mixin.scss";
+@import '~assets/css/mixin.scss';
 
 .toplist {
   background-color: #f3f4f6;
@@ -32,7 +32,7 @@
       min-width: 0;
       box-sizing: border-box;
       padding: 0 32px;
-      border-bottom: 1px solid rgba(0, 0, 0, .1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       p {
         height: 40px;
         line-height: 40px;
@@ -56,7 +56,7 @@
       color: #fff;
     }
   }
-  & .column-list{
+  & .column-list {
     padding: 12px;
     overflow: hidden;
     .column-item {

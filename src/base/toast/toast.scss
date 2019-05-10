@@ -1,35 +1,35 @@
 $toastPrefixCls: mm-toast;
 
 .#{$toastPrefixCls} {
-	position: fixed;
-	z-index: 1996;
-	font-size: 42px;
-	text-align: center;
-	transform: translateZ(1px);
-	&.#{$toastPrefixCls}-mask {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100vh;
-	}
-	&.#{$toastPrefixCls}-nomask {
-		max-width: 50%;
-		width: auto;
-		left: 50%;
-		top: 50%;
-		.#{$toastPrefixCls}-notice {
-			transform: translateX(-50%) translateY(-50%);
-		}
-	}
-	&-info {
-		min-width: 250px;
-		border-radius: 10px;
-		color: #fff;
-		background-color: rgba(58, 58, 58, 0.9);
-		line-height: 1.5;
-		padding: 20px 50px;
-	}
+  position: fixed;
+  z-index: 1996;
+  font-size: 42px;
+  text-align: center;
+  transform: translateZ(1px);
+  &.#{$toastPrefixCls}-mask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+  }
+  &.#{$toastPrefixCls}-nomask {
+    max-width: 50%;
+    width: auto;
+    left: 50%;
+    top: 50%;
+    .#{$toastPrefixCls}-notice {
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+  &-info {
+    min-width: 250px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: rgba(58, 58, 58, 0.9);
+    line-height: 1.5;
+    padding: 20px 50px;
+  }
 }

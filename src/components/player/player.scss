@@ -1,5 +1,5 @@
-@import "~assets/css/var.scss";
-@import "~assets/css/mixin.scss";
+@import '~assets/css/var.scss';
+@import '~assets/css/mixin.scss';
 
 .player {
   & .player-full {
@@ -17,7 +17,7 @@
     }
     &.player-full-enter-active {
       opacity: 1;
-      transition: all .15s ease-out;
+      transition: all 0.15s ease-out;
       transform: translate3d(0, 0, 0);
     }
     &.player-full-exit {
@@ -25,25 +25,25 @@
       opacity: 1;
     }
     &.player-full-exit-active {
-      transition: all .15s ease-out;
+      transition: all 0.15s ease-out;
       transform: translate3d(0, 50%, 0);
       opacity: 0;
     }
     .player-bg {
       width: 100%;
       height: 100%;
-      filter: blur(30Px);
+      filter: blur(30px);
       transform: scale(1.5);
       @include bg-full;
       &:after {
-        content: " ";
+        content: ' ';
         position: absolute;
         left: 0;
         top: 0;
         right: 0;
         bottom: 0;
         z-index: 1;
-        background-color: rgba(0, 0, 0, .25);
+        background-color: rgba(0, 0, 0, 0.25);
       }
     }
     .header {
@@ -54,7 +54,7 @@
       z-index: 1;
       height: 120px;
       padding: 20px 170px;
-      border-bottom: 1px solid rgba(255, 255, 255, .15);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       .header-back {
         position: absolute;
         top: 44px;
@@ -62,7 +62,7 @@
         display: block;
         width: 72px;
         height: 72px;
-        @include bg-url("~assets/img/oq.png");
+        @include bg-url('~assets/img/oq.png');
         @include bg-full;
       }
       h1 {
@@ -76,7 +76,7 @@
         height: 60px;
         line-height: 60px;
         font-size: 36px;
-        color: rgba(255, 255, 255, .4);
+        color: rgba(255, 255, 255, 0.4);
         @include no-wrap;
       }
     }
@@ -95,11 +95,11 @@
       height: 320px;
       .progress-wrapper {
         display: flex;
-        height: 20Px;
+        height: 20px;
         padding: 8px 50px 0;
         .progress-time {
           width: 120px;
-          line-height: 20Px;
+          line-height: 20px;
           font-size: $font-size-small-ss;
           color: #fff;
           &.progress-time-l {
@@ -122,38 +122,38 @@
             height: 162px;
             margin-right: 30px;
             &.mode-list {
-              @include bg-url("~assets/img/player/mode-list.png");
+              @include bg-url('~assets/img/player/mode-list.png');
             }
             &.mode-random {
-              @include bg-url("~assets/img/player/mode-random.png");
+              @include bg-url('~assets/img/player/mode-random.png');
             }
             &.mode-single {
-              @include bg-url("~assets/img/player/mode-single.png");
+              @include bg-url('~assets/img/player/mode-single.png');
             }
           }
           &.btn-prev {
             width: 214px;
             height: 214px;
-            @include bg-url("~assets/img/player/prev.png");
+            @include bg-url('~assets/img/player/prev.png');
           }
           &.btn-play {
             width: 252px;
             height: 252px;
-            @include bg-url("~assets/img/player/play.png");
+            @include bg-url('~assets/img/player/play.png');
             &.btn-pause {
-              @include bg-url("~assets/img/player/pause.png");
+              @include bg-url('~assets/img/player/pause.png');
             }
           }
           &.btn-next {
             width: 214px;
             height: 214px;
-            @include bg-url("~assets/img/player/next.png");
+            @include bg-url('~assets/img/player/next.png');
           }
           &.btn-list {
             width: 162px;
             height: 162px;
             margin-left: 30px;
-            @include bg-url("~assets/img/player/list.png");
+            @include bg-url('~assets/img/player/list.png');
           }
         }
       }
@@ -176,7 +176,8 @@
       flex: 1;
       font-size: $font-size-small;
       color: #888;
-      h2, p {
+      h2,
+      p {
         @include no-wrap;
       }
       h2 {
@@ -195,16 +196,16 @@
       height: 90px;
       margin-right: 50px;
       @include bg-full;
-      @include bg-url("~assets/img/player/min-play.png");
+      @include bg-url('~assets/img/player/min-play.png');
       &.pause {
-        @include bg-url("~assets/img/player/min-pause.png");
+        @include bg-url('~assets/img/player/min-pause.png');
       }
     }
     &-list {
       width: 90px;
       height: 90px;
       @include bg-full;
-      @include bg-url("~assets/img/player/min-list.png");
+      @include bg-url('~assets/img/player/min-list.png');
     }
   }
 }

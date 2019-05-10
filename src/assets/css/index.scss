@@ -4,8 +4,8 @@
 
 // 间接设置全局动态属性可以防止它们在局部被覆
 :root {
-	--THEME: var(--USER-THEME-COLOR, #e5473c);
-	--THEME-COLOR: var(--USER-THEME-COLOR, #e5473c);
+  --THEME: var(--USER-THEME-COLOR, #e5473c);
+  --THEME-COLOR: var(--USER-THEME-COLOR, #e5473c);
 }
 
 //#root, body, html {
@@ -15,34 +15,34 @@
 //}
 
 #root {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .mm-block {
-	display: block !important;
+  display: block !important;
 }
 
 .mm-none {
-	display: none !important;
+  display: none !important;
 }
 
 //flex
 .mm-wrapper {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
 }
 
 .mm-content {
-	min-height: 0;
-	flex: 1;
-	overflow: hidden;
-	background-color: $theme-main-color;
+  min-height: 0;
+  flex: 1;
+  overflow: hidden;
+  background-color: $theme-main-color;
 }
 
 //position
@@ -61,42 +61,42 @@
 //}
 
 .mm-blur {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	width: 100vw;
-	overflow: hidden;
-	& .mm-blur-bg {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vw;
-		filter: blur(30px);
-		transform: scale(1.5);
-		@include bg-full($p: 50%, $s: cover);
-		&:after {
-			content: ' ';
-			position: absolute;
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			z-index: 1;
-			background-color: rgba(0, 0, 0, 0.25);
-		}
-	}
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  overflow: hidden;
+  & .mm-blur-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vw;
+    filter: blur(30px);
+    transform: scale(1.5);
+    @include bg-full($p: 50%, $s: cover);
+    &:after {
+      content: ' ';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+  }
 }
 
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 .translate-enter {
-	transform: translate3d(100%, 0, 0);
-	&.translate-enter-active {
-		transition: transform 0.3s;
-		transform: translate3d(0, 0, 0);
-	}
+  transform: translate3d(100%, 0, 0);
+  &.translate-enter-active {
+    transition: transform 0.3s;
+    transform: translate3d(0, 0, 0);
+  }
 }

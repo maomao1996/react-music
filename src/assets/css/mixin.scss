@@ -11,20 +11,19 @@
   -webkit-line-clamp: $line;
   overflow: hidden;
   text-overflow: ellipsis;
-  /*! autoprefixer: off */
+  /*!  autoprefixer: ignore next   */
   -webkit-box-orient: vertical;
-  /* autoprefixer: on */
 }
 
 //图片
-@mixin img-full($attr:cover) {
+@mixin img-full($attr: cover) {
   width: 100%;
   height: 100%;
   object-fit: $attr;
 }
 
 //背景图
-@mixin bg-full($p:center,$s:contain,$r:no-repeat) {
+@mixin bg-full($p: center, $s: contain, $r: no-repeat) {
   background-position: $p;
   background-size: $s;
   background-repeat: $r;

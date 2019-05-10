@@ -1,6 +1,6 @@
-@import "~assets/css/var.scss";
-@import "~assets/css/mixin.scss";
-@import "~assets/css/playCount.scss";
+@import '~assets/css/var.scss';
+@import '~assets/css/mixin.scss';
+@import '~assets/css/playCount.scss';
 
 .playlist {
   height: 100%;
@@ -10,7 +10,7 @@
     .mm-blur-bg {
       top: 160px;
       &:after {
-        background-color: rgba(0,0,0,.2);
+        background-color: rgba(0, 0, 0, 0.2);
       }
     }
   }
@@ -55,7 +55,7 @@
         }
         span {
           font-size: 32px;
-          color: rgba(255, 255, 255, .5);
+          color: rgba(255, 255, 255, 0.5);
         }
       }
     }
