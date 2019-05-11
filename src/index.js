@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 
 import App from 'pages/App'
 import store from './store'
+import { VERSION } from './config'
 
 import 'assets/css/index.scss'
 // import registerServiceWorker from './registerServiceWorker';
@@ -15,9 +16,8 @@ import 'assets/css/index.scss'
 // }
 
 // 版权信息
-const pkg = require('../package.json')
 window.mmPlayer = window.mmplayer = `欢迎使用 茂茂听音乐!
-当前版本为：V${pkg.version}
+当前版本为：V${VERSION}
 作者：茂茂
 Github：https://github.com/maomao1996/react-music
 歌曲来源于网易云音乐 (http://music.163.com)`

@@ -9,7 +9,7 @@ import Loading from 'base/loading/loading'
 
 import { addPlay } from 'store/actions'
 import { search, getMusicDetail } from 'api'
-import { HTTP_OK } from 'common/config'
+import { HTTP_OK } from '@/config'
 import formatSongs from 'model/song'
 import formatPlayList from 'model/playlist'
 

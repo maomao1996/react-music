@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { URL, defaultLimit } from 'common/config'
+import { URL, defaultLimit } from '@/config'
 
 axios.interceptors.response.use(response => {
   //欺骗自己的loading动画

@@ -7,7 +7,7 @@ import Scroll from 'base/scroll/scroll'
 import ColumnList from 'base/columnList/columnList'
 
 import { getBanner, getPersonalized } from 'api'
-import { HTTP_OK } from 'common/config'
+import { HTTP_OK } from '@/config'
 import { formatPlayListMin } from 'model/playlist'
 
 import './discover.scss'

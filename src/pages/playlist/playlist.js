@@ -9,7 +9,7 @@ import Scroll from 'base/scroll/scroll'
 
 import { setAllPlay } from 'store/actions'
 import { getPlaylistDetail } from 'api'
-import { HTTP_OK } from 'common/config'
+import { HTTP_OK } from '@/config'
 import { formatPlayCount } from 'common/util'
 import { createPlayListDetail } from 'model/playlist'
 

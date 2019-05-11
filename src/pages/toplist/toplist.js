@@ -4,7 +4,7 @@ import Loading from 'base/loading/loading'
 import MmNav from 'components/mm-nav/mm-nav'
 import Scroll from 'base/scroll/scroll'
 
-import { HTTP_OK } from 'common/config'
+import { HTTP_OK } from '@/config'
 import { getTopListDetail } from 'api'
 
 import './toplist.scss'

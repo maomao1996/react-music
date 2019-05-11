@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import SearchList from 'components/search-list/search-list'
 
 import { searchHot } from 'api'
-import { HTTP_OK } from 'common/config'
+import { HTTP_OK } from '@/config'
 
 import './search.scss'
 
