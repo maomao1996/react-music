@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, lazy, Suspense } from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -7,18 +7,18 @@ import {
 } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import asyncComponent from 'common/asyncComponent'
 import Drawer from 'base/drawer/drawer'
+import Loading from 'base/loading/loading'
 import MmHeader from 'components/mm-header/mm-header'
 import Player from 'components/player/player'
 import Menu from 'components/menu/menu'
 
-const Discover = asyncComponent(() => import('pages/discover/discover'))
-const Search = asyncComponent(() => import('pages/search/search'))
-const TopList = asyncComponent(() => import('pages/toplist/toplist'))
-const PlayList = asyncComponent(() => import('pages/playlist/playlist'))
-const SheetList = asyncComponent(() => import('pages/sheetlist/sheetlist'))
-const Skin = asyncComponent(() => import('pages/skin/skin'))
+const Discover = lazy(() => import('pages/discover/discover'))
+const Search = lazy(() => import('pages/search/search'))
+const TopList = lazy(() => import('pages/toplist/toplist'))
+const PlayList = lazy(() => import('pages/playlist/playlist'))
+const SheetList = lazy(() => import('pages/sheetlist/sheetlist'))
+const Skin = lazy(() => import('pages/skin/skin'))
 
 class App extends Component {
   constructor(props) {
@@ -45,15 +45,17 @@ class App extends Component {
         >
           <MmHeader onOpen={this.openDrawer} />
           <main className="mm-wrapper">
-            <Switch>
-              <Route path="/discover" component={Discover} />
-              <Route path="/search" component={Search} />
-              <Route path="/toplist" component={TopList} />
-              <Route path="/playlist/:id" component={PlayList} />
-              <Route path="/sheetlist" component={SheetList} />
-              <Route path="/skin" component={Skin} />
-              <Redirect to="/discover" />
-            </Switch>
+            <Suspense fallback={<Loading />}>
+              <Switch>
+                <Route path="/discover" component={Discover} />
+                <Route path="/search" component={Search} />
+                <Route path="/toplist" component={TopList} />
+                <Route path="/playlist/:id" component={PlayList} />
+                <Route path="/sheetlist" component={SheetList} />
+                <Route path="/skin" component={Skin} />
+                <Redirect to="/discover" />
+              </Switch>
+            </Suspense>
           </main>
           {this.props.showPlayer && <Player />}
         </Drawer>
