@@ -1,5 +1,7 @@
 # React-Music（2018.12.27）
 
+高仿网易云音乐安卓客户端
+
 > API：一个开源的[网易云音乐 NodeJS 版 API](https://binaryify.github.io/NeteaseCloudMusicApi)（有 api 才有动力写！！！）
 
 > [在线演示地址](http://reactmusic.mtnhao.com)
@@ -9,6 +11,8 @@
 > [交流 QQ 群：529940193](http://shang.qq.com/wpa/qunwpa?idkey=f8be1b627a89108ccfda9308720d2a4d0eb3306f253c5d3e8d58452e20b91129)
 
 ## 如何安装与使用
+
+> react-music
 
 ```
 git clone https://github.com/maomao1996/react-music.git  //下载react-music
@@ -24,12 +28,14 @@ yarn build  //项目打包
 
 > 后台服务器
 
+[网易云音乐 NodeJS 版 API](https://binaryify.github.io/NeteaseCloudMusicApi)
+
 ```
-cd react-music/server //进入后台服务器目录
+下载 NeteaseCloudMusicApi
 
-yarn //安装依赖
+npm install // 安装依赖
 
-node app.js //服务端运行 访问 http://localhost:3000
+node app.js // 服务端运行 访问 http://localhost:3000
 ```
 
 #### 运行 react-music 后无法获取音乐请检查后台服务器是否启动
@@ -52,12 +58,13 @@ node app.js //服务端运行 访问 http://localhost:3000
 
 ## 项目布局
 
-```
+<details>
+<summary>展开查看</summary>
+<pre><code>.
 ├── config                                          // webpack 配置文件
 ├── public                                          // 项目启动页面
 ├── scripts                                         // 脚本工具
 ├── screenshots                                     // 项目截图
-├── server                                          // 后台服务器目录
 ├── src                                             // 项目源码目录
 │   ├── api                                         // 数据交互
 │   │   └── index.js
@@ -149,7 +156,8 @@ node app.js //服务端运行 访问 http://localhost:3000
 │   │   ├── index.js                                // 引用 redux
 │   │   └── reducers.js                             // 处理数据
 │   └── index.js                                    // 入口主文件
-```
+</code></pre>
+</details>
 
 ## 功能
 
