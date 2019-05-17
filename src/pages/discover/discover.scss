@@ -137,7 +137,7 @@
         font-size: $font-size-small-x;
         word-wrap: break-word;
         word-break: break-all;
-        @include no-wrap-line(2);
+        @include no-wrap(2);
       }
     }
   }

@@ -49,12 +49,11 @@
     display: flex;
     height: 140px;
     margin-left: 30px;
-    border-bottom: 1px solid #eee;
     line-height: 140px;
     font-size: $font-size-large-s;
     color: #333;
-    &:nth-last-of-type(1) {
-      border: 0;
+    &:not(:last-child) {
+      border-bottom: 1px solid #eee;
     }
     &.active {
       color: $theme-color;

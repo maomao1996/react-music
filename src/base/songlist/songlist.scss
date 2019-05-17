@@ -5,6 +5,9 @@
   .song-item {
     display: flex;
     padding-left: 20px;
+    &:not(:last-child) .song-info {
+      border-bottom: 1px solid $songList-line;
+    }
     .song-num {
       width: 160px;
       height: 160px;
@@ -16,9 +19,6 @@
       flex: 1;
       min-width: 0;
       padding: 25px 15px 25px 0;
-      &:not(:last-child) {
-        border-bottom: 1px solid $songList-line;
-      }
       h2 {
         height: 50px;
         margin-bottom: 20px;
