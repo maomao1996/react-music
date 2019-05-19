@@ -108,8 +108,6 @@ node app.js // 服务端运行 访问 http://localhost:3000
 │   │        ├── toast.js
 │   │        └── toast.scss
 │   ├── common                                      // 公共 Js 目录
-│   │   ├── asyncComponent.js                       // 路由懒加载配置
-│   │   ├── config.js                               // 基础配置
 │   │   └── util.js                                 // 公用 Js 方法
 │   ├── components                                  // 公共项目组件目录
 │   │   ├── menu                                    // 菜单组件
@@ -155,6 +153,7 @@ node app.js // 服务端运行 访问 http://localhost:3000
 │   │   ├── actionTypes.js                          // 配置 actions 常量
 │   │   ├── index.js                                // 引用 redux
 │   │   └── reducers.js                             // 处理数据
+│   ├── config.js                                   // 基础配置
 │   └── index.js                                    // 入口主文件
 </code></pre>
 </details>
