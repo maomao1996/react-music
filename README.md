@@ -15,15 +15,15 @@
 > react-music
 
 ```
-git clone https://github.com/maomao1996/react-music.git  //下载react-music
+git clone https://github.com/maomao1996/react-music.git  //下载 react-music
 
-cd react-music //进入react-music播放器目录
+cd react-music //进入 react-music 播放器目录
 
 yarn //安装依赖
 
-yarn start //服务端运行
+yarn start // 运行 react-music 访问 http://localhost:8163
 
-yarn build  //项目打包
+yarn build  // 项目打包
 ```
 
 > 后台服务器
@@ -40,7 +40,7 @@ node app.js // 服务端运行 访问 http://localhost:3000
 
 #### 运行 react-music 后无法获取音乐请检查后台服务器是否启动
 
-#### common/config.js 的 url 地址要和后台服务器地址一致
+#### src/config.js 的 URL 地址要和后台服务器地址一致
 
 ## 技术栈
 
