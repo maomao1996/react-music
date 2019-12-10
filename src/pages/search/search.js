@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import classNames from 'classnames'
 
-import SearchList from 'components/search-list/search-list'
+import SearchList from '@/components/search-list/search-list'
 
-import { searchHot } from 'api'
+import { searchHot } from '@/api'
 import { HTTP_OK } from '@/config'
 
 import './search.scss'

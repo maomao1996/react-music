@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-import Scroll from 'base/scroll/scroll'
+import Scroll from '@/base/scroll/scroll'
 
 import './music-list.scss'
 

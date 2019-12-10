@@ -1,4 +1,4 @@
-@import '~assets/css/mixin.scss';
+@import '~@/styles/mixin.scss';
 
 .player-cd {
   position: relative;
@@ -20,7 +20,7 @@
     z-index: 9;
     width: 276px;
     height: 414px;
-    @include bg-url('~assets/img/player/needle.png');
+    @include bg-url('~@/assets/images/player/needle.png');
     @include bg-full;
     transform: translate3d(-35px, 0, 0);
     transform-origin: 48px 48px;
@@ -41,7 +41,7 @@
       height: 100%;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
-      @include bg-url('~assets/img/player/disc.png');
+      @include bg-url('~@/assets/images/player/disc.png');
       @include bg-full;
     }
     img {

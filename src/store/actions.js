@@ -1,5 +1,5 @@
 import * as ActionTypes from './actionTypes'
-import { findIndex } from 'common/util'
+import { findIndex } from '@/utils/utils'
 
 // 显示Player组件
 export function setShowPlayer(showPlayer) {

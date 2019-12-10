@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
   <head>
     <meta charset="utf-8" />
     <meta
@@ -44,7 +44,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>茂茂听音乐</title>
-    <% if(htmlWebpackPlugin.options.NODE_ENV === 'production'){ %>
+    <% if ( process.env.NODE_ENV === 'production' ){ %>
     <script>
       var _hmt = _hmt || []
       ;(function() {

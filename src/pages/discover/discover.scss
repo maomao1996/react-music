@@ -1,6 +1,6 @@
-@import '~assets/css/var.scss';
-@import '~assets/css/mixin.scss';
-@import '~assets/css/playCount.scss';
+@import '~@/styles/var.scss';
+@import '~@/styles/mixin.scss';
+@import '~@/styles/playCount.scss';
 
 .discover {
   height: 100%;
@@ -48,15 +48,15 @@
         @include bg-full;
       }
       &.fm:before {
-        @include bg-url('~assets/img/discover/icn_fm.png');
+        @include bg-url('~@/assets/images/discover/icn_fm.png');
       }
 
       &.fm:active:before {
-        @include bg-url('~assets/img/discover/icn_fm_prs.png');
+        @include bg-url('~@/assets/images/discover/icn_fm_prs.png');
       }
       &.daily {
         &:before {
-          @include bg-url('~assets/img/discover/icn_daily.png');
+          @include bg-url('~@/assets/images/discover/icn_daily.png');
         }
         &:after {
           content: attr(data-date);
@@ -70,25 +70,25 @@
       }
       &.daily:active {
         &:before {
-          @include bg-url('~assets/img/discover/icn_daily_prs.png');
+          @include bg-url('~@/assets/images/discover/icn_daily_prs.png');
         }
         &:after {
           color: $theme-sub-color;
         }
       }
       &.playlist:before {
-        @include bg-url('~assets/img/discover/icn_playlist.png');
+        @include bg-url('~@/assets/images/discover/icn_playlist.png');
       }
 
       &.playlist:active:before {
-        @include bg-url('~assets/img/discover/icn_playlist_prs.png');
+        @include bg-url('~@/assets/images/discover/icn_playlist_prs.png');
       }
       &.rank:before {
-        @include bg-url('~assets/img/discover/icn_rank.png');
+        @include bg-url('~@/assets/images/discover/icn_rank.png');
       }
 
       &.rank:active:before {
-        @include bg-url('~assets/img/discover/icn_rank_prs.png');
+        @include bg-url('~@/assets/images/discover/icn_rank_prs.png');
       }
     }
   }
@@ -103,7 +103,7 @@
       font-weight: 700;
       span {
         padding-right: 50px;
-        @include bg-url('~assets/img/aa7.png');
+        @include bg-url('~@/assets/images/aa7.png');
         @include bg-full($s: 28px, $p: right center);
       }
     }

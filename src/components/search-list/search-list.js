@@ -3,15 +3,15 @@ import { withRouter } from 'react-router-dom'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
 
-import BaseSongList from 'base/songlist/songlist'
-import RowList from 'base/rowList/rowList'
-import Loading from 'base/loading/loading'
+import BaseSongList from '@/base/songlist/songlist'
+import RowList from '@/base/rowList/rowList'
+import Loading from '@/base/loading/loading'
 
-import { addPlay } from 'store/actions'
-import { search, getMusicDetail } from 'api'
+import { addPlay } from '@/store/actions'
+import { search, getMusicDetail } from '@/api'
 import { HTTP_OK } from '@/config'
-import formatSongs from 'model/song'
-import formatPlayList from 'model/playlist'
+import formatSongs from '@/model/song'
+import formatPlayList from '@/model/playlist'
 
 import './search-list.scss'
 

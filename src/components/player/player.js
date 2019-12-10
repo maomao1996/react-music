@@ -6,15 +6,15 @@ import { connect } from 'react-redux'
 
 import Cd from './cd/cd'
 import MusicList from './music-list/music-list'
-import Progress from 'base/progress/progress'
+import Progress from '@/base/progress/progress'
 
 import {
   setShowPlayer,
   setCurrentMusic,
   setCurrentIndex,
   setPlayList
-} from 'store/actions'
-import { formatTime } from 'common/util'
+} from '@/store/actions'
+import { formatTime } from '@/utils/utils'
 
 import './player.scss'
 
@@ -248,9 +248,7 @@ class Player extends Component {
         </div>
         <audio
           ref="audioEle"
-          src={`https://music.163.com/song/media/outer/url?id=${
-            currentMusic.id
-          }.mp3`}
+          src={`https://music.163.com/song/media/outer/url?id=${currentMusic.id}.mp3`}
         />
         <MusicList
           show={showMusicList}
@@ -287,7 +285,4 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Player)
+export default connect(mapStateToProps, mapDispatchToProps)(Player)

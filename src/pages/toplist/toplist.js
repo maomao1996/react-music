@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
-import Loading from 'base/loading/loading'
-import MmNav from 'components/mm-nav/mm-nav'
-import Scroll from 'base/scroll/scroll'
+import Loading from '@/base/loading/loading'
+import MmNav from '@/components/mm-nav/mm-nav'
+import Scroll from '@/base/scroll/scroll'
 
 import { HTTP_OK } from '@/config'
-import { getTopListDetail } from 'api'
+import { getTopListDetail } from '@/api'
 
 import './toplist.scss'
 
@@ -84,9 +84,9 @@ class TopList extends Component {
                   </div>
                   <div className="row-item-bd">
                     {item.tracks.map((tracks, index) => (
-                      <p key={`${item.id}${index}`}>{`${tracks.first}-${
-                        tracks.second
-                      }`}</p>
+                      <p
+                        key={`${item.id}${index}`}
+                      >{`${tracks.first}-${tracks.second}`}</p>
                     ))}
                   </div>
                 </div>
@@ -99,9 +99,9 @@ class TopList extends Component {
                   </div>
                   <div className="row-item-bd">
                     {artistList.artists.map((item, index) => (
-                      <p key={`${item.third}${index}`}>{`${item.first}    ${
-                        item.third
-                      }`}</p>
+                      <p
+                        key={`${item.third}${index}`}
+                      >{`${item.first}    ${item.third}`}</p>
                     ))}
                   </div>
                 </div>

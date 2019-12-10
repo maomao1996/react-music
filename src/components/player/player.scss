@@ -1,5 +1,5 @@
-@import '~assets/css/var.scss';
-@import '~assets/css/mixin.scss';
+@import '~@/styles/var.scss';
+@import '~@/styles/mixin.scss';
 
 .player {
   & .player-full {
@@ -62,7 +62,7 @@
         display: block;
         width: 72px;
         height: 72px;
-        @include bg-url('~assets/img/oq.png');
+        @include bg-url('~@/assets/images/oq.png');
         @include bg-full;
       }
       h1 {
@@ -122,38 +122,38 @@
             height: 162px;
             margin-right: 30px;
             &.mode-list {
-              @include bg-url('~assets/img/player/mode-list.png');
+              @include bg-url('~@/assets/images/player/mode-list.png');
             }
             &.mode-random {
-              @include bg-url('~assets/img/player/mode-random.png');
+              @include bg-url('~@/assets/images/player/mode-random.png');
             }
             &.mode-single {
-              @include bg-url('~assets/img/player/mode-single.png');
+              @include bg-url('~@/assets/images/player/mode-single.png');
             }
           }
           &.btn-prev {
             width: 214px;
             height: 214px;
-            @include bg-url('~assets/img/player/prev.png');
+            @include bg-url('~@/assets/images/player/prev.png');
           }
           &.btn-play {
             width: 252px;
             height: 252px;
-            @include bg-url('~assets/img/player/play.png');
+            @include bg-url('~@/assets/images/player/play.png');
             &.btn-pause {
-              @include bg-url('~assets/img/player/pause.png');
+              @include bg-url('~@/assets/images/player/pause.png');
             }
           }
           &.btn-next {
             width: 214px;
             height: 214px;
-            @include bg-url('~assets/img/player/next.png');
+            @include bg-url('~@/assets/images/player/next.png');
           }
           &.btn-list {
             width: 162px;
             height: 162px;
             margin-left: 30px;
-            @include bg-url('~assets/img/player/list.png');
+            @include bg-url('~@/assets/images/player/list.png');
           }
         }
       }
@@ -196,16 +196,16 @@
       height: 90px;
       margin-right: 50px;
       @include bg-full;
-      @include bg-url('~assets/img/player/min-play.png');
+      @include bg-url('~@/assets/images/player/min-play.png');
       &.pause {
-        @include bg-url('~assets/img/player/min-pause.png');
+        @include bg-url('~@/assets/images/player/min-pause.png');
       }
     }
     &-list {
       width: 90px;
       height: 90px;
       @include bg-full;
-      @include bg-url('~assets/img/player/min-list.png');
+      @include bg-url('~@/assets/images/player/min-list.png');
     }
   }
 }

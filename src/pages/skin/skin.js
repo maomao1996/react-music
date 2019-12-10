@@ -1,7 +1,7 @@
 import React from 'react'
 
-import MmNav from 'components/mm-nav/mm-nav'
-import Toast from 'base/toast/toast'
+import MmNav from '@/components/mm-nav/mm-nav'
+import Toast from '@/base/toast/toast'
 
 import './skin.scss'
 

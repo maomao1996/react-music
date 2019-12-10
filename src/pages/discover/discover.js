@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import Slide from 'base/slide/silde'
-import Loading from 'base/loading/loading'
-import Scroll from 'base/scroll/scroll'
-import ColumnList from 'base/columnList/columnList'
+import Slide from '@/base/slide/silde'
+import Loading from '@/base/loading/loading'
+import Scroll from '@/base/scroll/scroll'
+import ColumnList from '@/base/columnList/columnList'
 
-import { getBanner, getPersonalized } from 'api'
+import { getBanner, getPersonalized } from '@/api'
 import { HTTP_OK } from '@/config'
-import { formatPlayListMin } from 'model/playlist'
+import { formatPlayListMin } from '@/model/playlist'
 
 import './discover.scss'
 

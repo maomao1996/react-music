@@ -1,5 +1,5 @@
-@import '~assets/css/var.scss';
-@import '~assets/css/mixin.scss';
+@import '~@/styles/var.scss';
+@import '~@/styles/mixin.scss';
 
 .musicList {
   position: absolute;
@@ -74,7 +74,7 @@
       width: 110px;
       height: 100%;
       @include bg-full;
-      @include bg-url('~assets/img/player/list-del.png');
+      @include bg-url('~@/assets/images/player/list-del.png');
     }
   }
 }

@@ -28,7 +28,7 @@
     padding-left: 40px;
     font-size: $font-size-small;
     color: #fff;
-    @include bg-url('~assets/img/discover/zf.png');
+    @include bg-url('~@/assets/images/discover/zf.png');
     @include bg-full($p: left 0, $s: 30px);
   }
 }

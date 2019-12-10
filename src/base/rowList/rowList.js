@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { formatPlayCount } from 'common/util'
+import { formatPlayCount } from '@/utils/utils'
 
 import './rowList.scss'
 

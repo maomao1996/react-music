@@ -1,5 +1,5 @@
-@import '~assets/css/var.scss';
-@import '~assets/css/mixin.scss';
+@import '~@/styles/var.scss';
+@import '~@/styles/mixin.scss';
 
 .drawer-sidebar .menu {
   height: 100%;
@@ -10,7 +10,7 @@
     line-height: 480px;
     background-color: $theme-bg;
     opacity: 0.8;
-    @include bg-url('~assets/img/menu/aip.png');
+    @include bg-url('~@/assets/images/menu/aip.png');
     @include bg-full;
   }
 
@@ -27,7 +27,7 @@
       display: block;
       width: 60px;
       height: 100px;
-      @include bg-url('~assets/img/aa7.png');
+      @include bg-url('~@/assets/images/aa7.png');
       @include bg-full($s: 30px, $p: center right);
     }
   }

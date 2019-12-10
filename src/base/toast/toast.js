@@ -1,5 +1,5 @@
 import React from 'react'
-import Notification from 'base/notification/notification'
+import Notification from '@/base/notification/notification'
 import classNames from 'classnames'
 
 import './toast.scss'

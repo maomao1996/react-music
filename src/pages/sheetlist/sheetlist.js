@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-import Loading from 'base/loading/loading'
-import MmNav from 'components/mm-nav/mm-nav'
-import Scroll from 'base/scroll/scroll'
-import ColumnList from 'base/columnList/columnList'
+import Loading from '@/base/loading/loading'
+import MmNav from '@/components/mm-nav/mm-nav'
+import Scroll from '@/base/scroll/scroll'
+import ColumnList from '@/base/columnList/columnList'
 
-import { getTopPlaylist } from 'api'
+import { getTopPlaylist } from '@/api'
 import { HTTP_OK } from '@/config'
-import formatPlayList from 'model/playlist'
+import formatPlayList from '@/model/playlist'
 
 import './sheetlist.scss'
 

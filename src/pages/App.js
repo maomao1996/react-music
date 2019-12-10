@@ -7,18 +7,18 @@ import {
 } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import Drawer from 'base/drawer/drawer'
-import Loading from 'base/loading/loading'
-import MmHeader from 'components/mm-header/mm-header'
-import Player from 'components/player/player'
-import Menu from 'components/menu/menu'
+import Drawer from '@/base/drawer/drawer'
+import Loading from '@/base/loading/loading'
+import MmHeader from '@/components/mm-header/mm-header'
+import Player from '@/components/player/player'
+import Menu from '@/components/menu/menu'
 
-const Discover = lazy(() => import('pages/discover/discover'))
-const Search = lazy(() => import('pages/search/search'))
-const TopList = lazy(() => import('pages/toplist/toplist'))
-const PlayList = lazy(() => import('pages/playlist/playlist'))
-const SheetList = lazy(() => import('pages/sheetlist/sheetlist'))
-const Skin = lazy(() => import('pages/skin/skin'))
+const Discover = lazy(() => import('@/pages/discover/discover'))
+const Search = lazy(() => import('@/pages/search/search'))
+const TopList = lazy(() => import('@/pages/toplist/toplist'))
+const PlayList = lazy(() => import('@/pages/playlist/playlist'))
+const SheetList = lazy(() => import('@/pages/sheetlist/sheetlist'))
+const Skin = lazy(() => import('@/pages/skin/skin'))
 
 class App extends Component {
   constructor(props) {

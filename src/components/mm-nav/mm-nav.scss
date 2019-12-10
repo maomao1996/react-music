@@ -1,5 +1,5 @@
-@import '~assets/css/var.scss';
-@import '~assets/css/mixin.scss';
+@import '~@/styles/var.scss';
+@import '~@/styles/mixin.scss';
 
 .mm-nav {
   position: relative;
@@ -17,7 +17,7 @@
     display: block;
     width: 72px;
     height: 72px;
-    @include bg-url('~assets/img/oq.png');
+    @include bg-url('~@/assets/images/oq.png');
     @include bg-full;
   }
   &-title {
