@@ -26,7 +26,7 @@ export class Song {
 }
 
 export function createSongs(music) {
-  if (music.dt) {
+  if (music.dt !== undefined) {
     return new Song({
       id: music.id,
       name: music.name,
