@@ -8,7 +8,7 @@ import BaseSongList from '@/base/songlist/songlist'
 import Scroll from '@/base/scroll/scroll'
 
 import { setAllPlay } from '@/store/actions'
-import { getPlaylistDetail } from '@/api'
+import { getPlaylistDetail, getMusicDetail } from '@/api'
 import { HTTP_OK } from '@/config'
 import { formatPlayCount } from '@/utils/utils'
 import { createPlayListDetail } from '@/model/playlist'
@@ -33,10 +33,13 @@ class PlayList extends Component {
     // console.log(this.props.location.query)
     getPlaylistDetail(this.props.match.params.id).then(res => {
       if (res.data.code === HTTP_OK) {
-        // console.log(createPlayListDetail(res.data.playlist))
-        this.setState({
-          data: createPlayListDetail(res.data.playlist),
-          loading: false
+        const ids = res.data.playlist.trackIds.map((v) => v.id).toString()
+        getMusicDetail(ids).then((result) => {
+          res.data.playlist.tracks = result.data.songs
+          this.setState({
+            data: createPlayListDetail(res.data.playlist),
+            loading: false,
+          })
         })
       }
     })
