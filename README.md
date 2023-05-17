@@ -4,7 +4,7 @@
 
 > API：一个开源的[网易云音乐 NodeJS 版 API](https://binaryify.github.io/NeteaseCloudMusicApi)（有 api 才有动力写！！！）
 
-> [在线演示地址](http://reactmusic.mtnhao.com)
+> [在线演示地址](https://reactmusic.fe-mm.com)
 
 > [Vue PC/移动端二合一版本](https://github.com/maomao1996/Vue-mmPlayer)
 
